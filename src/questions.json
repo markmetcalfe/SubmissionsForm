@@ -1,8 +1,17 @@
 [
     {
+        "title":"This is our chance. I'm excited to be submitting on the Zero Carbon Bill because...",
+        "description":"This is what will come straight after the \"Dear Madam / Sir\" in your submission. We need to you write something here, because that's what will make it an individual submission, which will get taken more seriously.",
+        "required":true,
+        "type":"single",
+        "textbox":"",
+        "placeholder":""
+    },
+    {
         "title":"What process should the Government use to set a new emissions reduction target in legislation?",
         "description":"asdasd",
         "required":true,
+        "type":"multi",
         "answers": [
             {
                 "option":"The Government sets a 2050 target in legislation now",
@@ -25,6 +34,7 @@
         "title":"How should New Zealand meet its targets?",
         "description":"asdasd",
         "required":true,
+        "type":"multi",
         "answers": [
             {
                 "option":"Domestic emissions reductions only (including from new forest planting).",
@@ -47,6 +57,13 @@
                 "textbox":"Net zero emissions across all greenhouse gases by 2050."
             }
         ]
+    },
+    {
+        "title":"Any Extra Stuff?",
+        "description":"asd",
+        "required":false,
+        "type":"single",
+        "textbox":"blah blah blah",
+        "placeholder":"Type here"
     }
-
 ]
