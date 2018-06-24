@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import ReactSVG from 'react-svg';
 import './App.css';
-import questionData from './questions.json';
-import detailsData from './details.json';
+import logo from './logo.svg';
+import formData from './form.json';
 
 class App extends Component {
   render() {
-    return(<Form questions={questionData} details={detailsData}></Form>)
+    return(<Form data={formData}></Form>)
   }
 }
 
@@ -47,28 +48,47 @@ class Form extends Component {
   }
 
   render() {
+    let header = this.props.data.header;
+    let questions = this.props.data.questions;
+    let details = this.props.data.details;
+    let footer = this.props.data.footer;
+
     let questionElems = []
-    for(let i=0; i<this.props.questions.length; i++){
-      if(this.props.questions[i].type === "multi")
-        questionElems.push(<Multi data={this.props.questions[i]} num={i} form={this} key={i}></Multi>)
-      else if(this.props.questions[i].type === "single")
-        questionElems.push(<Text data={this.props.questions[i]} num={i} form={this} key={i}></Text>)
+    for(let i=0; i<questions.length; i++){
+      if(questions[i].type === "multi")
+        questionElems.push(<MultiQuestion data={questions[i]} num={i} form={this} key={i}></MultiQuestion>)
+      else if(questions[i].type === "single")
+        questionElems.push(<Question data={questions[i]} num={i} form={this} key={i}></Question>)
     }
 
     let detailsElems = []
-    for(let i=0; i<this.props.details.length; i++){
-      detailsElems.push(<Details data={this.props.details[i]} num={i} form={this} key={i}></Details>)
+    for(let i=0; i<details.length; i++){
+      detailsElems.push(<Details data={details[i]} num={i} form={this} key={i}></Details>)
     }
 
     return(
+      <div>
+      <header className="header">
+        <h1>{header.title}</h1>
+        <p>{header.content}</p>
+      </header>
       <form onSubmit={this.handleSubmit}>
         {questionElems}
         <section className="details">
           <h2>Your Details</h2>
           {detailsElems}
         </section>
-        <input type="submit" value="Submit" />
+        <section className="footer">
+          <p className="disclaimer">{footer.text}</p>
+          <input type="submit" value={footer.button} />
+          <div className="logo-container">
+            <a href="http://www.orataiao.org.nz/" target="_blank" rel="noopener noreferrer" className="orataiao-logo" title="Form By OraTaiao">
+              <ReactSVG path={logo} />
+            </a>
+          </div>
+        </section>
       </form>
+      </div>
     )
   }
 }
@@ -82,8 +102,8 @@ class Details extends Component {
         placeholder={data.elements[i].placeholder} key={i} onChange={(e)=>this.props.form.updateDetail(e.target)}></input>)
     }
     return (
-      <div className={data.class+" "+elems.length}>
-        <label>{data.title}</label>
+      <div className={(this.props.data.required ? "required " : " ")+data.class+" w"+elems.length}>
+        <label className="title">{data.title}</label>
         {elems}
       </div>
     )
@@ -94,12 +114,17 @@ class Question extends Component {
   constructor(props){
     super(props);
     this.props.form.addQuestions(this);
-    this.response = "";
+    this.textarea = <textarea defaultValue={(typeof this.props.data.textbox !== "undefined")?this.props.data.textbox:""} 
+      placeholder={(typeof this.props.data.placeholder !== "undefined")?this.props.data.placeholder:""} 
+      onChange={(e)=>this.handleKeyEvent(e)}></textarea>
+    this.response = this.props.data.textbox+"";
+    this.options = [];
   }
 
   handleClick(event, object){
     this.selected = object.radioBtn;
-    this.response = object.textarea.props.defaultValue;
+    this.optionsText = object.expanded();
+    this.response = this.textarea.value;
     this.props.form.handleChange(event);
   }
 
@@ -107,61 +132,58 @@ class Question extends Component {
     this.response = event.target.value;
     this.props.form.handleChange(event);
   }
-}
 
-class Text extends Question {
   render(){
-    if(typeof this.props.data.textbox !== "undefined")
-      this.textarea = <textarea defaultValue={this.props.data.textbox} onChange={(e)=>this.handleKeyEvent(e)}></textarea>
-    else
-      this.textarea = <textarea defaultValue="" placeholder={this.props.data.placeholder} onChange={(e)=>this.handleKeyEvent(e)}></textarea>
-    this.response = this.props.data.textbox+""
     return(
       <section className={(this.props.data.required ? "required " : " ")+this.props.data.type}>
-        <h2>{this.props.data.title}</h2>
-        <p>{this.props.data.description}</p>
-        <div>{this.textarea}</div>
+        <h2 className="title">{this.props.data.title}</h2>
+        <p className="description">{this.props.data.description}</p>
+        {this.getOptions()}
+        {this.optionsText}
+        {this.getTextArea()}
       </section>
     )
   }
+
+  getTextArea(){return <span>{this.textarea}</span>}
+  getOptions(){}
 }
 
-class Multi extends Question {
-  render(){
+class MultiQuestion extends Question {
+  getOptions(){
     let out = []
-    for(let i=0; i<this.props.data.answers.length; i++){
-      out.push(<Answer data={this.props.data.answers[i]} question={this} form={this.props.form}
-        parent={this.props.num} key={this.props.num.toString()+i.toString()} iteration={i}></Answer>)
+    for(let i=0; i<this.props.data.options.length; i++){
+      out.push(<Answer data={this.props.data} question={this} form={this.props.form}
+        parent={this.props.num} key={this.props.num.toString()+i.toString()} i={i}></Answer>)
     }
-    return(
-      <section className={(this.props.data.required ? "required " : " ")+this.props.data.type}>
-        <h2>{this.props.data.title}</h2>
-        <p>{this.props.data.description}</p>
-        <div>{out}</div>
-      </section>
-    )
+    return <div className="options">{out}</div>
   }
+
+  getTextArea(){ if(typeof this.selected !== "undefined") return <span>{this.textarea}</span>}
 }
 
 class Answer extends Component {
   constructor(props) {
     super(props);
+    this.optionData = this.props.data.options[this.props.i]
     this.data = this.props.data;
-    this.id = this.props.parent.toString()+this.props.iteration.toString();
+    this.id = this.props.parent.toString()+this.props.i.toString();
     this.radioBtn = <input type="radio" name={this.props.parent} id={this.id} onChange={((e) => this.props.question.handleClick(e, this))}></input>
-    if(typeof this.data.textbox !== "undefined")
-      this.textarea = <textarea defaultValue={this.data.textbox} name={this.id} onChange={(e)=>this.props.question.handleKeyEvent(e)}></textarea>
-    else
-      this.textarea = <textarea defaultValue="" placeholder={this.data.placeholder} name={this.id} onChange={(e)=>this.props.question.handleKeyEvent(e)}></textarea>
   }
 
   render(){
-    return(<div><label>{this.radioBtn}<span className="label-text">{this.data.option}</span></label>{this.expanded()}</div>)
+    return <label className="button">{this.radioBtn}
+      <span className="custom-radio"></span>
+      <span className="text">{this.optionData.option}</span>
+      </label>
   }
 
   expanded(){
     if(this.props.question.selected === this.radioBtn){
-      return <div><p>{this.data.clicked}</p>{this.textarea}</div>;
+      return <div>
+        <p className="clicked">{this.optionData.clicked}</p>
+        <p className="clicked-description">{this.optionData.clicked_description}</p>
+      </div>
     }
   }
 }

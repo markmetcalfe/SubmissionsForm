@@ -1,28 +1,299 @@
-.App {
+:root {
+  --theme-primary-color: #4180aa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 15px "-apple-system","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+  color: #333333;
+  background-color: #eaeaea;
+}
+
+form {
+  padding: 5vmin;
+  margin: 0 auto 30px auto;
+  max-width: 700px;
+  background-color: #fff;    
+  border-top: #4180aa 5px solid;
+  border-bottom: #4180aa 5px solid;
+}
+
+h1, h2, h3 {  
+  font-weight: bold;
+  line-height: 1.2em;  
+  margin: 0;
+  color: #4180aa;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {  
+  font-size: 20px;
+  font-style: italic;
+}
+
+label {
+  display: block;
+}
+
+p {
+  margin: 5px 0;
+}
+
+header {
+  margin: 30px 0;
+}
+
+section:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.option {
+  width: 50%;
+  display: inline-block;
+}
+
+.button {
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.button .text {
+  margin-left: 30px;
+  display: block;
+}
+
+.button:hover .text {
+  color: #4180aa;
+}
+
+.button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.button .custom-radio {
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  border-radius: 50%;
+}
+
+.button:hover input ~ .custom-radio {
+  border: 1px solid #4180aa;
+}
+
+.button input:checked ~ .custom-radio {
+  background-color: #4180aa;
+}
+
+.custom-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.button input:checked ~ .custom-radio:after {
+  display: block;
+}
+
+.button .custom-radio:after {
+  background: #fff;
+  width: 8px;
+  height: 8px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+.header, .footer {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.details {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.details > div:not(:last-child) {
+  margin-bottom: 5px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.details h2 {
+  margin-bottom: 15px;
+  font-style: initial;
 }
 
-.App-intro {
-  font-size: large;
+.details label {
+  margin-top: 10px;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.details input {
+  margin: 5px 0;
+}
+
+.details div.w2 input {
+  width: 49%;
+}
+
+.details div.w2 input:last-child {
+  margin-left: 2%;
+}
+
+.details div.w1 input {
+  width: 100%;
+}
+
+form > *:last-child {
+  margin-bottom: 0;
+}
+
+p.description, p.clicked {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+p.description {
+  margin: 15px 0;
+}
+
+p.clicked {
+  margin-top: 20px;
+}
+
+p.clicked-description {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.options label:last-child {
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+}
+
+.required .title:after {
+  color: #fa4848;
+  font-size: 10px;
+  font-style: initial;
+  vertical-align: super;
+  content: " (Required)";
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus, select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4180aa;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4180aa;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4180aa;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea, select {
+  display: inline-block;
+  padding: 6px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #333;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-transition: background-color border-color ease-in-out .25s, -moz-box-shadow ease-in-out .25s;
+  -webkit-transition: background-color border-color ease-in-out .25s, -webkit-box-shadow ease-in-out .25s;
+  transition: background-color border-color ease-in-out .25s, box-shadow ease-in-out .25s;
+}
+
+input[type="submit"], input[type="button"] {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-transition: background-color ease-in-out .15s, border-color ease-in-out .15s;
+  -webkit-transition: background-color ease-in-out .15s, border-color ease-in-out .15s;
+  transition: background-color ease-in-out .15s, border-color ease-in-out .15s;
+}
+
+input[type="submit"]:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):active, input[type="button"]:not([disabled]):active, input[type="submit"]:not([disabled]):hover, input[type="button"]:not([disabled]):hover {
+  -moz-box-shadow: 0 0 0 transparent;
+  -webkit-box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+::selection {
+  background: #4180aa;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+::-moz-selection {
+  background: #4180aa;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.logo-container {
+  display:block;
+  margin: 36.6px auto 0 auto;
+}
+
+.orataiao-logo div {
+  display: inline-block;
+}
+
+.orataiao-logo svg {
+  width: 60px;
+  -moz-transition: -moz-transform 0.15s;
+  -webkit-transition: -webkit-transform 0.15s;
+  transition: transform 0.15s;
+}
+
+.orataiao-logo:hover svg {
+  -moz-transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.orataiao-logo svg path {
+  fill: #333;
+  -moz-transition: fill 0.15s;
+  -webkit-transition: fill 0.15s;
+  transition: fill 0.15s;
+}
+
+.orataiao-logo:hover svg path {
+  fill: #4180aa;
 }
