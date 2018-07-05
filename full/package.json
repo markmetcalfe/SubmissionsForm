@@ -1,0 +1,15 @@
+{
+  "name": "submission-form-quick",
+  "version": "1.0.0",
+  "description": "",
+  "main": "submission-full.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Metcalfe",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}

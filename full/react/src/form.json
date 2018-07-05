@@ -19,19 +19,14 @@
             "type":"multi",
             "options": [
                 {
-                    "option":"The Government sets a 2050 target in legislation now",
+                    "option":"Yes, we should save the planet",
                     "clicked":"Great!",
                     "clicked_description":"asd"
                 },
                 {
-                    "option":"If the Government sets a 2050 target now, which is the best target for New Zealand?",
+                    "option":"No, coporate interest is more important",
                     "clicked":"OK!",
                     "clicked_description":"qwe"
-                },
-                {
-                    "option":"Something Else",
-                    "clicked":"Hmm!",
-                    "clicked_description":"zxc"
                 }
             ],
             "textbox":"NZ (businesses, iwi, communities and households) needs certainty to act fast now.  more…"
