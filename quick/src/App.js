@@ -40,7 +40,6 @@ class Form extends Component {
     }
     console.log(this.details)
     console.log(this.details)
-
   }
 
   addChangeListener(element){
@@ -71,7 +70,7 @@ class Form extends Component {
         <p>{header.content}</p>
         <h2>{header.subtitle}</h2>
       </header>
-      <form onSubmit={this.handleSubmit} action="/submit-quick">
+      <form onSubmit={this.handleSubmit}>
         {elems}
         <section className="footer">
           <p className="disclaimer" dangerouslySetInnerHTML={{ __html: footer.text }}></p>
