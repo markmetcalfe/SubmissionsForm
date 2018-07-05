@@ -50,7 +50,7 @@ header {
 }
 
 section:not(:last-child) {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .option {
@@ -121,10 +121,23 @@ section:not(:last-child) {
   text-align: center;
 }
 
+.footer {
+  margin-top: 30px;
+}
+
 .details {
-  text-align: center;
-  width: 50%;
-  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.details.name {
+  margin-top: -20px;
+}
+
+.details .label {
+  display: block;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: -3px;
 }
 
 .details > div:not(:last-child) {
@@ -141,8 +154,12 @@ section:not(:last-child) {
   text-align: left;
 }
 
-.details input {
+input[type="text"] {
   margin: 5px 0;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+  width: 300px;
 }
 
 .details div.w2 input {
@@ -161,13 +178,15 @@ form > *:last-child {
   margin-bottom: 0;
 }
 
-p.description, p.clicked {
+p.clicked {
   font-weight: 600;
   font-size: 15px;
 }
 
 p.description {
-  margin: 15px 0;
+  margin: 5px 0 0;    
+  font-size: 12px;
+  font-style: italic;
 }
 
 p.clicked {
@@ -184,7 +203,7 @@ p.clicked-description {
   margin-bottom: 10px;
 }
 
-textarea {
+textarea, *[contenteditable=true] {
   width: 100%;
   height: 100%;
 }
@@ -197,7 +216,7 @@ textarea {
   content: " (Required)";
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus, select:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus, select:focus, *[contenteditable=true]:focus {
   border-color: #66afe9;
   outline: 0;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4180aa;
@@ -205,7 +224,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #4180aa;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea, select {
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea, select, *[contenteditable=true] {
   display: inline-block;
   padding: 6px 12px;
   font-family: inherit;
@@ -296,4 +315,89 @@ input[type="submit"]:not([disabled]):focus, input[type="button"]:not([disabled])
 
 .orataiao-logo:hover svg path {
   fill: #4180aa;
+}
+
+p.text-section {
+  margin: 20px 0;
+}
+
+p.text-section:first-child {
+  margin-top:0;
+}
+
+p.disclaimer, .switch {
+  text-align: left;
+}
+
+strong {
+  color: #4180aa;
+}
+
+.switch {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.switch p {
+  font-style: italic;
+}
+
+.switch input {display:none;}
+
+.switch .label {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 23px;
+  left: 0;
+  right: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 23px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 2.66px;
+  bottom: 2.66px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4180aa;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4180aa;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+ul {
+  margin: 5px 0;
+}
+
+a {
+  color: #4180aa;
+  text-decoration: none;
+  outline: none;
 }

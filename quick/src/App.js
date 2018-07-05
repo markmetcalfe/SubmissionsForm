@@ -40,7 +40,7 @@ class Form extends Component {
     }
     console.log(this.details)
     console.log(this.details)
-    event.preventDefault();
+
   }
 
   addChangeListener(element){
@@ -50,20 +50,18 @@ class Form extends Component {
   render() {
     let header = this.props.data.header;
     let questions = this.props.data.questions;
-    let details = this.props.data.details;
     let footer = this.props.data.footer;
 
-    let questionElems = []
+    let elems = []
     for(let i=0; i<questions.length; i++){
       if(questions[i].type === "multi")
-        questionElems.push(<MultiQuestion data={questions[i]} num={i} form={this} key={i}></MultiQuestion>)
+        elems.push(<MultiQuestion data={questions[i]} num={i} form={this} key={i}></MultiQuestion>)
       else if(questions[i].type === "single")
-        questionElems.push(<Question data={questions[i]} num={i} form={this} key={i}></Question>)
-    }
-
-    let detailsElems = []
-    for(let i=0; i<details.length; i++){
-      detailsElems.push(<Details data={details[i]} num={i} form={this} key={i}></Details>)
+        elems.push(<Question data={questions[i]} num={i} form={this} key={i}></Question>)
+      else if(questions[i].type === "text")
+        elems.push(<Text data={questions[i]} num={i} form={this} key={i}></Text>)
+      else if(questions[i].type === "details")
+        elems.push(<Details data={questions[i]} num={i} form={this} key={i}></Details>)
     }
 
     return(
@@ -71,15 +69,13 @@ class Form extends Component {
       <header className="header">
         <h1>{header.title}</h1>
         <p>{header.content}</p>
+        <h2>{header.subtitle}</h2>
       </header>
-      <form onSubmit={this.handleSubmit}>
-        {questionElems}
-        <section className="details">
-          <h2>Your Details</h2>
-          {detailsElems}
-        </section>
+      <form onSubmit={this.handleSubmit} action="/submit-quick">
+        {elems}
         <section className="footer">
-          <p className="disclaimer">{footer.text}</p>
+          <p className="disclaimer" dangerouslySetInnerHTML={{ __html: footer.text }}></p>
+          <Switch data={footer.checkbox} />
           <input type="submit" value={footer.button} />
           <div className="logo-container">
             <a href="http://www.orataiao.org.nz/" target="_blank" rel="noopener noreferrer" className="orataiao-logo" title="Form By OraTaiao">
@@ -95,16 +91,10 @@ class Form extends Component {
 
 class Details extends Component {
   render(){
-    let data = this.props.data
-    let elems = []
-    for(let i=0; i<data.elements.length; i++){
-      elems.push(<input type={data.elements[i].type} defaultValue={data.elements[i].value} id={data.elements[i].id}
-        placeholder={data.elements[i].placeholder} key={i} onChange={(e)=>this.props.form.updateDetail(e.target)}></input>)
-    }
     return (
-      <div className={(this.props.data.required ? "required " : " ")+data.class+" w"+elems.length}>
-        <label className="title">{data.title}</label>
-        {elems}
+      <div className={"details "+this.props.data.class}>
+        <input type={this.props.data.input} placeholder={this.props.data.placeholder} />
+        <span className="label">{this.props.data.description}</span>
       </div>
     )
   }
@@ -114,9 +104,11 @@ class Question extends Component {
   constructor(props){
     super(props);
     this.props.form.addQuestions(this);
-    this.textarea = <textarea defaultValue={(typeof this.props.data.textbox !== "undefined")?this.props.data.textbox:""} 
-      placeholder={(typeof this.props.data.placeholder !== "undefined")?this.props.data.placeholder:""} 
-      onChange={(e)=>this.handleKeyEvent(e)}></textarea>
+    if(this.props.data.input === "simple"){
+      this.textarea = <input type="text" placeholder={this.props.data.placeholder} onChange={(e)=>this.handleKeyEvent(e)}></input>
+    } else if(this.props.data.input === "rich"){
+      this.textarea = <p contentEditable="true" dangerouslySetInnerHTML={{ __html: this.props.data.textbox }} onChange={(e)=>this.handleKeyEvent(e)}></p>
+    }
     this.response = this.props.data.textbox+"";
     this.options = [];
   }
@@ -136,8 +128,8 @@ class Question extends Component {
   render(){
     return(
       <section className={(this.props.data.required ? "required " : " ")+this.props.data.type}>
-        <h2 className="title">{this.props.data.title}</h2>
-        <p className="description">{this.props.data.description}</p>
+        <p className="title" dangerouslySetInnerHTML={{ __html: this.props.data.title }}></p>
+        <p className="description" dangerouslySetInnerHTML={{ __html: this.props.data.description }}></p>
         {this.getOptions()}
         {this.optionsText}
         {this.getTextArea()}
@@ -185,6 +177,34 @@ class Answer extends Component {
         <p className="clicked-description">{this.optionData.clicked_description}</p>
       </div>
     }
+  }
+}
+
+class Switch extends Component {
+  constructor(props) {
+    super(props);
+    this.label = this.props.data.label;
+    this.default = this.props.data.default;
+    this.description = this.props.data.description;
+  }
+
+  render(){
+    return (
+      <label className="switch">
+         <p>{this.description}</p>
+         <input type="checkbox" defaultChecked={this.default} />
+         <span className="slider"></span>
+        <span className="label">{this.label}</span>
+      </label>
+    )
+  }
+}
+
+class Text extends Component {
+  render(){
+    return (
+      <p className="text-section" dangerouslySetInnerHTML={{ __html: this.props.data.text }}></p>
+    )
   }
 }
 

@@ -1,0 +1,114 @@
+{
+    "header":{
+        "title":"Here’s our 5 minute online submission",
+        "subtitle": "A healthy Zero Carbon Act is fast, fair, firm, and founded on Te Tiriti",
+        "content": "but your own voice matters the most, so do add your ideas."
+    }, 
+    "questions": [
+        {
+            "type":"text",
+            "text":"Dear Ministry for the Environment Zero Carbon Bill team<strong style=\"display:block;margin-top:10px; font-size:16px\">A healthy Zero Carbon Act is fast, fair, firm, and founded on Te Tiriti</strong>"
+        },
+        {
+            "title":"As a",
+            "description":"Add your role(s) here if you like",
+            "required":false,
+            "type":"single",
+            "input": "simple",
+            "placeholder":"e.g. Nurse/Student/etc"
+        },
+        {
+            "type":"text",
+            "text":"I want a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> – with health at its heart."
+        },
+        {
+            "title":"1. “<strong>Fast</strong>” means our Zero Carbon Act <b>fixes our NZ net zero target well before 2040</b> in law (all sectors, all domestic emissions, new forests) to play our part in <b>confidently limiting average global warming to 1.5’C.</b>",
+            "description":"Edit or add your own thoughts here...",
+            "required":false,
+            "type":"single",
+            "input":"rich",
+            "textbox":"New Zealand’s <b>domestic emissions</b> must: <ul><li><b>drop in 2019 and 2020</b> - towards global emissions peaking no later than 2020</li><li><b>rapidly reduce over the 2020s</b> (and making up for projected forestry harvesting)</li></ul>Please enact this Bill as high priority legislation to drive urgent climate action."
+        },
+        {
+            "title":"2. “<strong>Fair</strong>” means New Zealand’s Climate Change Commission considers global fairness, and creates a fairer, just and sustainable Aotearoa-NZ.",
+            "description":"Edit or add your own thoughts here...",
+            "required":false,
+            "type":"single",
+            "input":"rich",
+            "textbox":"“Fair” means: <ul><li>NZ does our fair share as a well-resourced, currently (and historically) high-emitting nation, to rapidly reduce our domestic emissions.</li><li>NZ recognises that our Pacific neighbours are in the frontline of climate change, and that Pacific island countries and others have been strongly calling for urgent action to keep global warming below 1.5º</li><li>NZ’s Climate Change Commission advises the government of the day on <b>the best policies for effectively reducing emissions while multi-solving for health and fairness.</b></li></ul>"
+        },
+        {
+            "title":"3. “<strong>Firm</strong>” means New Zealanders have science-based, long-term legal certainty to act.",
+            "description":"Edit or add your own thoughts here...",
+            "required":false,
+            "type":"single",
+            "input":"rich",
+            "textbox":"<ul><li>NZ’s Climate Change Commission <b>decides emissions budgets</b>, from <b>up-to-date climate science, global leadership and international fairness.</b></li><li>Any government can <b>choose more ambitious targets and policies for NZ to emit less</b> - but <b>all other changes can only be made by changing the Act</b> through NZ’s Parliament.</li></ol>"
+        },
+        {
+            "title":"4. “<strong>Tiriti-founded</strong>” means the Zero Emissions Act is founded on <b>Te Tiriti o Waitangi partnership and values.</b>",
+            "description":"Edit or add your own thoughts here...",
+            "required":false,
+            "type":"single",
+            "input":"rich",
+            "textbox":"<ul><li>NZ’s Climate Change Commissioner appointments and staffing reflect a partnership founded on Te Tiriti o Waitangi</li><li>The Commission has a well-resourced, influential Tiriti partnership work unit</li><li>Substantial funding of iwi and hapū advocacy capacity for Tiriti-founded climate action</li>"
+        },
+        {
+            "type":"text",
+            "text":"Because the Zero Carbon Act is an essential prescription for New Zealand’s health and wellbeing, I call for a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> with <strong>health at its heart.</strong>"
+        },
+        {
+            "title":"",
+            "description":"Please use your own experience and expertise to add anything else here about why this Bill is important:",
+            "required":false,
+            "type":"single",
+            "input":"rich",
+            "textbox":""
+        },
+        {
+            "title":"As a",
+            "description":"Add your role(s) here if you like",
+            "required":false,
+            "type":"single",
+            "input": "simple",
+            "placeholder":"e.g. Nurse/Student/etc"
+        },
+        {
+            "type":"text",
+            "text":"I want:<ul><li>the Zero Carbon Act to <b>grow great health co-benefits and health equity</b> in Aotearoa-NZ</li><li>the Climate Change Commission to include <b>Commissioners and staff who understand climate change health impacts and opportunities</b> now, and in future, from well-designed healthy climate action</li></ul><br>I want to work with health colleagues to:<ul><li><b>help our health sector quickly reach net zero emissions</b></li></ul><br>and I expect:<ul><li><b>savings</b> from reduced health sector emissions <b>devoted to better health-care.</b>"
+        },
+        {
+            "type":"text",
+            "text":"<p style=\"margin:30px 0 0 0\">Yours sincerely, </p>"
+        },
+        {
+            "type":"details",
+            "class":"name",
+            "input":"text",
+            "placeholder":"Your Name",
+            "description":"Feel free to add your title, eg Dr. or Prof."
+        },
+        {
+            "type":"details",
+            "input":"text",
+            "placeholder":"Your Email Address",
+            "description":"You'll also recieve a copy of this"
+        },
+        {
+            "type":"details",
+            "input":"text",
+            "placeholder":"Your Phone Number",
+            "description":""
+        }
+    ],
+    "footer": {
+        "text":"By clicking “Submit Now”, you are sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener\" target=\"_blank\">here</a>.",
+        "checkbox": {
+            "label":"I ask the Ministry for the Environment to withhold my name and personal details from public posting.",
+            "description":"Select this if you want your name and personal details withheld",
+            "default":false
+        },
+        "button":"Submit Now!"
+    }
+}
+
