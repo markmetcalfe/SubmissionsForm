@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
-import './App.css';
+import './index.css';
+import './Full.css';
 import logo from './logo.svg';
-import formData from './form.json';
+import formData from './full.json';
 
 class App extends Component {
   render() {

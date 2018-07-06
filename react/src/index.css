@@ -10,6 +10,7 @@ body {
   font: 15px "-apple-system","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
   color: #333333;
   background-color: #eaeaea;
+  margin: 0;
 }
 
 form {
@@ -46,7 +47,7 @@ p {
 }
 
 header {
-  margin: 30px 0;
+  margin: 30px 10px;
 }
 
 section:not(:last-child) {
@@ -154,12 +155,9 @@ section:not(:last-child) {
   text-align: left;
 }
 
-input[type="text"] {
-  margin: 5px 0;
-}
-
 input[type="text"], input[type="email"], input[type="number"] {
   width: 300px;
+  margin: 5px 0;
 }
 
 .details div.w2 input {
@@ -370,8 +368,8 @@ strong {
   content: "";
   height: 17px;
   width: 17px;
-  left: 2.66px;
-  bottom: 2.66px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -400,4 +398,11 @@ a {
   color: #4180aa;
   text-decoration: none;
   outline: none;
+}
+
+hr {
+  margin-top: 25px;
+  height: 1.5px;
+  border: none;
+  background-color: #4180aa;
 }
