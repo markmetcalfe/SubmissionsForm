@@ -432,29 +432,30 @@ hr {
   fill: #4180aa;
 }
 
+.details {
+  width: 300px;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+}
+
 .error {
   background-color: #f2dede;
   border: 1px solid #ebccd1;
   width: 320px;
-  margin: 10px 0 !important;
+  margin-bottom: 20px 0 !important;
   padding: 10px;
+}
+
+.errorMsg {
+  display: none;
+}
+
+.error .errorMsg {
+  display: block;
+  color: #a94442;
 }
 
 .error .label {
   display: none;
-}
-
-.error:before {
-  content: "This field is required";
-  color: #a94442;
-}
-
-.error.email:before {
-  content: "Please enter a valid email address";
-  color: #a94442;
-}
-
-.error.phone:before {
-  content: "Please enter a valid phone number";
-  color: #a94442;
 }

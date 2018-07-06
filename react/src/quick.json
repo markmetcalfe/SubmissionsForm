@@ -87,7 +87,8 @@
             "required":true,
             "input":"text",
             "placeholder":"Your Name",
-            "description":"Feel free to add your title, eg Dr. or Prof."
+            "description":"Feel free to add your title, eg Dr. or Prof.",
+            "error":"This field is required"
         },
         {
             "type":"details",
@@ -95,7 +96,8 @@
             "required":true,
             "input":"email",
             "placeholder":"Your Email Address",
-            "description":"You'll also recieve a copy of this"
+            "description":"You'll also recieve a copy of this",
+            "error":"Please enter a valid email address"
         },
         {
             "type":"details",
@@ -103,7 +105,8 @@
             "required":true,
             "input":"text",
             "placeholder":"Your Phone Number",
-            "description":""
+            "description":"",
+            "error":"Please enter a valid phone number"
         }
     ],
     "footer": {
