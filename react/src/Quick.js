@@ -41,10 +41,6 @@ class Form extends Component {
     this.forceUpdate();
   }
 
-  submitError(errors){
-
-  }
-
   handleRequired(){
     let ommitted = false;
     let email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -64,11 +60,7 @@ class Form extends Component {
     return ommitted;
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-
-    if(this.handleRequired()) return;
-
+  getElementData(){
     let toSend = {}
     let text_elems = [];
     for(let i=0; i<this.questions.length; i++){
@@ -95,6 +87,15 @@ class Form extends Component {
       details_elems[d] = this.details[d].response;
     }
     toSend["details"] = details_elems;
+    return toSend;
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    if(this.handleRequired()) return;
+
+    let elementData = this.getElementData();
 
     fetch('http://localhost:8003/submit', {
       method: 'POST',
@@ -102,19 +103,13 @@ class Form extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(toSend)
-    }).then(response => this.finishForm(response));
-
+      body: JSON.stringify(elementData)
+    }).then((response) => {
+      if (response.ok) this.finished = 2;
+      else this.finished = 3;
+      this.forceUpdate();
+    });
     this.finished = 1;
-    this.forceUpdate();
-  }
-
-  finishForm(response){
-    if(response.status === 200){
-      this.finished = 2;
-    } else {
-      this.finished = 3;
-    }
     this.forceUpdate();
   }
 
@@ -211,8 +206,11 @@ class Details extends FormComponent {
   }
 
   render(){
+    let errorMsg = [];
+    if(this.error) errorMsg = <span className="errorMsg">{this.props.data.error}</span>;
     return (
       <div className={"details "+this.props.data.class+(this.error?" error":"")}>
+        {errorMsg}
         <input type={this.props.data.input} placeholder={this.props.data.placeholder} 
            onChange={(e)=>this.handleKeyEvent(e)} />
         <span className="label">{this.props.data.description}</span>
