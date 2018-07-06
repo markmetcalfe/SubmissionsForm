@@ -7,17 +7,18 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const nodemailer = require('nodemailer');
-const smtpCredentials = require('./mail_config.json');
-const smtpConfig = {
-  host: smtpCredentials.host,
-  port: 587,
-  secure: true,
+const emailCredentials = require('./mail_config.json');
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
   auth: {
-      user: smtpCredentials.user,
-      pass: smtpCredentials.pass
+    user: emailCredentials.user,
+    pass: emailCredentials.pass
   }
-};
-const transporter = nodemailer.createTransport(smtpConfig);
+ });
+const MFE = {
+  name: "Ministry for the Environment",
+  address: "mark.ls.metcalfe@gmail.com"
+}
 
 const fs = require('fs');
 const pdf = require('html-pdf');
@@ -42,20 +43,20 @@ app.use(function(req, res, next) {
   next(); 
 });
 
-app.post('/quick', (req, res) => {
-  console.log("recieved");
-
+app.post('/submit', (req, res) => {
   let title = req.body.details.name+"'s Zero Carbon Bill Submission";
-  let html = createHTML(req.body);
-  let pdf = createPDF(html, function(file){
-
-    console.log("created pdf");
-
-    sendMail({
-      from: "\""+req.body.details.name+"\" <"+req.body.details.email+">",
-      to: req.body.details.email,
+  let pdf = createPDF(createHTML(req.body, ""), function(file){
+    let person = {
+      name: req.body.details.name,
+      address: req.body.details.email
+    }
+    let attached_note = "<section style=\"font-weight:600;padding-bottom:5px;border-bottom: 2px solid #ccc;\">I have attached a PDF to this email</section>";
+    let MFE_options = {
+      from: person,
+      replyTo: person,
+      to: MFE,
       subject: title,
-      html: html,
+      html: createHTML(req.body, attached_note),
       attachments: [
         {
           filename: title+'.pdf',
@@ -63,16 +64,35 @@ app.post('/quick', (req, res) => {
           contentType: 'application/pdf'
         }
       ]
+    };
+    transporter.sendMail(MFE_options, function(err,info){
+      res.sendStatus(200);
     });
-
-    console.log("sent mail");
+    let recipient_note = "<section style=\"padding-bottom:5px;border-bottom: 2px solid #ccc;\">The following is a copy of your submission</section>";
+    let recipient_options = {
+      from: person,
+      replyTo: person,
+      to: person,
+      subject: "Your Submission on the Zero Carbon Bill",
+      html: createHTML(req.body, recipient_note),
+      attachments: [
+        {
+          filename: title+'.pdf',
+          content: fs.createReadStream(file),
+          contentType: 'application/pdf'
+        }
+      ]
+    };
+    transporter.sendMail(recipient_options, function(err,info){
+      res.sendStatus(200);
+    });
   });
 });
 
 app.listen(8003, () => console.log("listening on 8003"));
 
-function createHTML(data){
-  let html = "<html><head><style>"+stylesheet+"</style></head><body><section>";
+function createHTML(data, extra){
+  let html = "<html><head><style>"+stylesheet+"</style></head><body>"+extra+"<section>";
   let date = new Date();
   html += date.getDate()+" "+months[date.getMonth()]+" "+date.getFullYear();
   html += "</section>";
@@ -90,32 +110,5 @@ function createPDF(html, done){
   pdf.create(html, options).toFile('./tmp/'+hash+".pdf", function(err, res) {
     if (err) return console.log(err);
     else done(res.filename);
-  });
-}
-
-function sendMail(options){
-  transporter.sendMail(options);
-}
-
-function sendMailTest(options){
-  nodemailer.createTestAccount((err, account) => {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
-      port: 587,
-      auth: {
-          user: 'tec5xsbajxrqsnl4@ethereal.email',
-          pass: 'm8fqWTS2tNs3vQSHAZ'
-      }
-    });
-
-    const mailOptions = options;
-  
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    });
   });
 }

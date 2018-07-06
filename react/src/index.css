@@ -401,8 +401,60 @@ a {
 }
 
 hr {
-  margin-top: 25px;
-  height: 1.5px;
+  margin: 25px 0;
+  height: 2px;
   border: none;
   background-color: #4180aa;
+}
+
+.finished {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2em; 
+  font-size: 30px;
+  color: #4180aa;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.orataiao-logo.rotating svg {
+  width: 120px;
+  animation-name: rotate; 
+  animation-duration: 1s; 
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.orataiao-logo.rotating svg path {
+  fill: #4180aa;
+}
+
+.error {
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  width: 320px;
+  margin: 10px 0 !important;
+  padding: 10px;
+}
+
+.error .label {
+  display: none;
+}
+
+.error:before {
+  content: "This field is required";
+  color: #a94442;
+}
+
+.error.email:before {
+  content: "Please enter a valid email address";
+  color: #a94442;
+}
+
+.error.phone:before {
+  content: "Please enter a valid phone number";
+  color: #a94442;
 }
