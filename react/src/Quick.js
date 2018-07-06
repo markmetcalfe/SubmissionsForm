@@ -45,8 +45,29 @@ class Form extends Component {
 
   }
 
+  handleRequired(){
+    let ommitted = false;
+    let email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(!email_regex.test(String(this.details.email.response))){
+      this.details.email.triggerRequired();
+      ommitted = true;
+    }
+    if(this.details.name.response.length===0){
+      this.details.name.triggerRequired();
+      ommitted = true;
+    } 
+    let phone_length = this.details.phone.response ? this.details.phone.response.match(/\d/g).length : 0;
+    if(phone_length<8 || phone_length>12){
+      this.details.phone.triggerRequired();
+      ommitted = true;
+    }
+    return ommitted;
+  }
+
   handleSubmit(event) {
     event.preventDefault();
+
+    if(this.handleRequired()) return;
 
     let toSend = {}
     let text_elems = [];
@@ -75,16 +96,26 @@ class Form extends Component {
     }
     toSend["details"] = details_elems;
 
-    console.log(toSend);
-
-    fetch('http://localhost:8003/quick', {
+    fetch('http://localhost:8003/submit', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(toSend)
-    })
+    }).then(response => this.finishForm(response));
+
+    this.finished = 1;
+    this.forceUpdate();
+  }
+
+  finishForm(response){
+    if(response.status === 200){
+      this.finished = 2;
+    } else {
+      this.finished = 3;
+    }
+    this.forceUpdate();
   }
 
   addChangeListener(element){
@@ -93,37 +124,52 @@ class Form extends Component {
 
   render() {
     let header = this.props.data.header;
+    header = (<header className="header">
+      <h1>{header.title}</h1>
+      <p>{header.content}</p>
+      <h2>{header.subtitle}</h2>
+      </header>
+    )
+
     let questions = this.props.data.questions;
     let footer = this.props.data.footer;
 
-    let elems = []
-    for(let i=0; i<questions.length; i++){
-      if(questions[i].type === "multi")
-        elems.push(<MultiQuestion data={questions[i]} num={i} form={this} key={i}></MultiQuestion>)
-      else if(questions[i].type === "single")
-        elems.push(<Question data={questions[i]} num={i} form={this} key={i}></Question>)
-      else if(questions[i].type === "text")
-        elems.push(<Text data={questions[i]} num={i} form={this} key={i}></Text>)
-      else if(questions[i].type === "details")
-        elems.push(<Details data={questions[i]} num={i} form={this} key={i}></Details>)
+    let elems = [];
+    let footerElems = [];
+    if(this.finished > 0){
+      elems = <section className="finished" dangerouslySetInnerHTML={{ __html: this.props.data.finished[this.finished-1] }}></section>
+    } else {
+      for(let i=0; i<questions.length; i++){
+        if(questions[i].type === "multi")
+          elems.push(<MultiQuestion data={questions[i]} num={i} form={this} key={i}></MultiQuestion>)
+        else if(questions[i].type === "single")
+          elems.push(<Question data={questions[i]} num={i} form={this} key={i}></Question>)
+        else if(questions[i].type === "text")
+          elems.push(<Text data={questions[i]} num={i} form={this} key={i}></Text>)
+        else if(questions[i].type === "details")
+          elems.push(<Details data={questions[i]} num={i} form={this} key={i}></Details>)
+      }
+      footerElems = (
+        <div>
+        <hr/>
+        <p className="disclaimer" dangerouslySetInnerHTML={{ __html: footer.text }}></p>
+        <Switch data={footer.checkbox} form={this} />
+        <input type="submit" value={footer.button} />
+        </div>
+      );
     }
-
+    
     return(
       <div>
-      <header className="header">
-        <h1>{header.title}</h1>
-        <p>{header.content}</p>
-        <h2>{header.subtitle}</h2>
-      </header>
+      {header}
       <form onSubmit={this.handleSubmit} id="mainForm">
         {elems}
-        <hr/>
         <section className="footer">
-          <p className="disclaimer" dangerouslySetInnerHTML={{ __html: footer.text }}></p>
-          <Switch data={footer.checkbox} form={this} />
-          <input type="submit" value={footer.button} />
+          {footerElems}
           <div className="logo-container">
-            <a href="http://www.orataiao.org.nz/" target="_blank" rel="noopener noreferrer" className="orataiao-logo" title="Form By OraTaiao">
+            <a href="http://www.orataiao.org.nz/" target="_blank" rel="noopener noreferrer" title="Form By OraTaiao"
+              className={"orataiao-logo"+((this.finished===1)?" rotating":"")} 
+            >
               <ReactSVG path={logo} />
             </a>
           </div>
@@ -151,11 +197,22 @@ class Details extends FormComponent {
   constructor(props){
     super(props);
     this.props.form.addDetail(this);
+    this.error = false;
+  }
+
+  handleKeyEvent(event){
+    this.error = false;
+    super.handleKeyEvent(event);
+  }
+
+  triggerRequired(){
+    this.error = true;
+    this.forceUpdate();
   }
 
   render(){
     return (
-      <div className={"details "+this.props.data.class}>
+      <div className={"details "+this.props.data.class+(this.error?" error":"")}>
         <input type={this.props.data.input} placeholder={this.props.data.placeholder} 
            onChange={(e)=>this.handleKeyEvent(e)} />
         <span className="label">{this.props.data.description}</span>

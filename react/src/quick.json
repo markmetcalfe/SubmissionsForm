@@ -58,7 +58,7 @@
             "text":"Because the Zero Carbon Act is an essential prescription for New Zealand’s health and wellbeing, I call for a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> with <strong>health at its heart.</strong>"
         },
         {
-            "title":"<strong>In my own words:</strong>",
+            "title":"<strong>In my own words:</strong><span class=\"paragraph-divider\"></span>",
             "description":"Please use your own experience and expertise to add anything else here about why this Bill is important:",
             "required":false,
             "type":"single",
@@ -107,7 +107,7 @@
         }
     ],
     "footer": {
-        "text":"By clicking “Submit Now”, you are sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener\" target=\"_blank\">here</a>.",
+        "text":"By clicking “Submit Now”, you are sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.",
         "checkbox": {
             "label":"I ask the Ministry for the Environment to withhold my name and personal details from public posting.",
             "description":"Select this if you want your name and personal details withheld",
@@ -115,6 +115,11 @@
             "default":false
         },
         "button":"Submit Now!"
-    }
+    },
+    "finished":[
+        "<p>Submitting...</p>",
+        "<p>Submitted!</p><p style=\"font-size:20px;\">Check your email for a copy</p>",
+        "<p>Failed to Submit :(</p>"
+    ]
 }
 
