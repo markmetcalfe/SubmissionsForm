@@ -17,6 +17,7 @@ const smtpConfig = {
       pass: smtpCredentials.pass
   }
 };
+const transporter = nodemailer.createTransport(smtpConfig);
 
 const fs = require('fs');
 const pdf = require('html-pdf');
@@ -42,9 +43,14 @@ app.use(function(req, res, next) {
 });
 
 app.post('/quick', (req, res) => {
+  console.log("recieved");
+
   let title = req.body.details.name+"'s Zero Carbon Bill Submission";
   let html = createHTML(req.body);
   let pdf = createPDF(html, function(file){
+
+    console.log("created pdf");
+
     sendMail({
       from: "\""+req.body.details.name+"\" <"+req.body.details.email+">",
       to: req.body.details.email,
@@ -58,6 +64,8 @@ app.post('/quick', (req, res) => {
         }
       ]
     });
+
+    console.log("sent mail");
   });
 });
 
@@ -86,7 +94,7 @@ function createPDF(html, done){
 }
 
 function sendMail(options){
-  
+  transporter.sendMail(options);
 }
 
 function sendMailTest(options){
