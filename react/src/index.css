@@ -459,3 +459,52 @@ hr {
 .error .label {
   display: none;
 }
+
+.homepage {
+  font-size: 3.5vmin;
+  text-align: center;
+}
+
+.homepage .link span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.homepage .link, .homepage .or {
+  margin: 5vmin;
+}
+
+.homepage.container {
+  position: absolute;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+}
+
+.homepage.container h1 {
+  font-size: 5vmin !important;
+  margin-bottom: 10vmin;
+}
+
+.homepage a .link {
+  display: table;
+  background-color: #fff;
+  width: 80vmin;
+  height: 10vmin;
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  transform: translatez(0);
+  -webkit-transition: -webkit-transform .25s, background-color .25s, color .25s;
+  -moz-transition: -moz-transform .25s, background-color .25s, color .25s;
+  transition: transform .25s, background-color .25s, color .25s;
+}
+
+.homepage a:hover .link {
+  background-color: #4180aa;
+  color: #fff;
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  transform: scale(1.15);
+}

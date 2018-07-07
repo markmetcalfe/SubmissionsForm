@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
 import ContentEditable from 'react-contenteditable';
-import './index.css';
-import './Quick.css';
 import logo from './logo.svg';
-import formData from './quick.json';
-
-class App extends Component {
-  render() {
-    return(<Form data={formData}></Form>)
-  }
-}
 
 class Form extends Component {
   constructor(props) {
@@ -52,7 +43,9 @@ class Form extends Component {
       this.details.name.triggerRequired();
       ommitted = true;
     } 
-    let phone_length = this.details.phone.response ? this.details.phone.response.match(/\d/g).length : 0;
+    let phone_length = 0;
+    if(this.details.phone.response.match(/\d/g) != null)
+      phone_length = this.details.phone.response.match(/\d/g).length;
     if(phone_length<8 || phone_length>12){
       this.details.phone.triggerRequired();
       ommitted = true;
@@ -157,7 +150,7 @@ class Form extends Component {
     return(
       <div>
       {header}
-      <form onSubmit={this.handleSubmit} id="mainForm">
+      <form onSubmit={this.handleSubmit} id="mainForm" className={this.props.globalClass}>
         {elems}
         <section className="footer">
           {footerElems}
@@ -329,4 +322,4 @@ class Text extends FormComponent {
   }
 }
 
-export default App;
+export default Form;
