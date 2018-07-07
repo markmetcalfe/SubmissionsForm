@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const md5 = require('md5');
+const inlineCss = require('inline-css');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -14,7 +15,10 @@ const transporter = nodemailer.createTransport({
     user: emailCredentials.user,
     pass: emailCredentials.pass
   }
- });
+});
+
+
+const emailNotes = require('./email_notes.json');
 const MFE = {
   name: "Ministry for the Environment",
   address: "mark.ls.metcalfe@gmail.com"
@@ -45,18 +49,17 @@ app.use(function(req, res, next) {
 
 app.post('/submit', (req, res) => {
   let title = req.body.details.name+"'s Zero Carbon Bill Submission";
-  let pdf = createPDF(createHTML(req.body, ""), function(file){
+  createPDF(createHTML(req.body), function(file){
     let person = {
       name: req.body.details.name,
       address: req.body.details.email
     }
-    let attached_note = "<section style=\"font-weight:600;padding-bottom:5px;border-bottom: 2px solid #ccc;\">I have attached a PDF to this email</section>";
     let MFE_options = {
       from: person,
       replyTo: person,
       to: MFE,
       subject: title,
-      html: createHTML(req.body, attached_note),
+      html: emailNotes.for_recipient,
       attachments: [
         {
           filename: title+'.pdf',
@@ -65,16 +68,12 @@ app.post('/submit', (req, res) => {
         }
       ]
     };
-    transporter.sendMail(MFE_options, function(err,info){
-      res.sendStatus(200);
-    });
-    let recipient_note = "<section style=\"padding-bottom:5px;border-bottom: 2px solid #ccc;\">The following is a copy of your submission</section>";
     let recipient_options = {
       from: person,
       replyTo: person,
       to: person,
       subject: "Your Submission on the Zero Carbon Bill",
-      html: createHTML(req.body, recipient_note),
+      html: emailNotes.for_sender+emailNotes.for_recipient,
       attachments: [
         {
           filename: title+'.pdf',
@@ -83,16 +82,18 @@ app.post('/submit', (req, res) => {
         }
       ]
     };
+    transporter.sendMail(MFE_options);
     transporter.sendMail(recipient_options, function(err,info){
-      res.sendStatus(200);
+      if(err) res.sendStatus(500);
+      else res.sendStatus(200);
     });
   });
 });
 
 app.listen(8003, () => console.log("listening on 8003"));
 
-function createHTML(data, extra){
-  let html = "<html><head><style>"+stylesheet+"</style></head><body>"+extra+"<section>";
+function createHTML(data){
+  let html = "<html><head><style>"+stylesheet+"</style></head><body><section>";
   let date = new Date();
   html += date.getDate()+" "+months[date.getMonth()]+" "+date.getFullYear();
   html += "</section>";

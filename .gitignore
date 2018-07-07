@@ -2,6 +2,7 @@
 
 tmp/
 mail_config.json
+sendgrid.json
 
 package-lock.json
 
