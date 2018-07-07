@@ -22,8 +22,8 @@ class Homepage extends Component {
   render() {
     return(
       <main className="container homepage">
-        <h1 className="pagetitle">OraTaiao's Zero Carbon Bill Submission</h1>
-        <Link link="/quick" text="Make a quick 3 minute submission" />
+        <h1 className="pagetitle">Zero Carbon Bill Submission</h1>
+        <Link link="/quick" text="Make a quick 5 minute submission" />
         <Link link="/full" text="Make a full submission" last={true} />
       </main>
     )
