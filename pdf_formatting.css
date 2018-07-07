@@ -1,37 +1,37 @@
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font: 18px "-apple-system","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
-    margin: 0;
-  }
-  
-  p {
-    margin: 5px 0;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .paragraph-divider {
-      display: block;
-      height: 15px;
-  }
-  
-  section {
-    margin-bottom: 35px;
-  }
-  
-  p.text-section {
-    margin: 20px 0;
-  }
-  
-  p.text-section:first-child {
-    margin-top:0;
-  }
-  
-  strong {
-    color: #4180aa;
-  }
-  
-  ul {
-    margin: 5px 0;
-  }
+body {
+  font: 18px "-apple-system","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin: 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.paragraph-divider {
+    display: block;
+    height: 15px;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+p.text-section {
+  margin: 20px 0;
+}
+
+p.text-section:first-child {
+  margin-top:0;
+}
+
+strong {
+  color: #4180aa;
+}
+
+ul {
+  margin: 5px 0;
+}
