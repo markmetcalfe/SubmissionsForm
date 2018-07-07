@@ -30,10 +30,10 @@ const options = {
   "format": "A4",
   "orientation": "portrait",
   "border": {
-    "top": "2.54cm",
-    "right": "2.54cm",
-    "bottom": "2.54cm",
-    "left": "2.54cm"
+    "top": "2.5cm",
+    "right": "2.5cm",
+    "bottom": "2.5cm",
+    "left": "2.5cm"
   },
   "type": "pdf"
 }
