@@ -17,7 +17,6 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-
 const emailNotes = require('./email_notes.json');
 const MFE = {
   name: "Ministry for the Environment",
@@ -59,7 +58,7 @@ app.post('/submit', (req, res) => {
       replyTo: person,
       to: MFE,
       subject: title,
-      html: emailNotes.for_recipient,
+      html: emailNotes.for_recipient+req.body.details.name,
       attachments: [
         {
           filename: title+'.pdf',
@@ -73,7 +72,7 @@ app.post('/submit', (req, res) => {
       replyTo: person,
       to: person,
       subject: "Your Submission on the Zero Carbon Bill",
-      html: emailNotes.for_sender+emailNotes.for_recipient,
+      html: emailNotes.for_sender+emailNotes.for_recipient+req.body.details.name,
       attachments: [
         {
           filename: title+'.pdf',
@@ -98,9 +97,7 @@ function createHTML(data){
   html += date.getDate()+" "+months[date.getMonth()]+" "+date.getFullYear();
   html += "</section>";
   for(let i=0; i<data.text.length; i++){
-    html += "<section>";
     html += data.text[i];
-    html += "</section>";
   }
   html += "</body></html>";
   return html;

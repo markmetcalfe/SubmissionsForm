@@ -1,4 +1,4 @@
 {
-  "for_recipient":"<section>I have attached a PDF to this email</section>",
-  "for_sender":"<section style=\"padding-bottom:5px;border-bottom: 2px solid #ccc;margin-bottom: 35px\">The following is a copy of your submission</section>"
+  "for_recipient":"Kia ora,<br><p>Here is my submission on the Zero Carbon Bill. It is attached as a PDF to this email.</p><br>Ngā mihi,<br>",
+  "for_sender":"<div style=\"padding-bottom:5px;border-bottom: 2px solid #ccc;margin-bottom: 15px\">The following is a copy of your submission</div><br>"
 }

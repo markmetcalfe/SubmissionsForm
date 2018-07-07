@@ -16,8 +16,19 @@ p {
     height: 15px;
 }
 
-section {
-  margin-bottom: 35px;
+.print-divider {
+  display:block;
+  margin-bottom: 28px;
+}
+
+.double-divider {
+  display:block;
+  margin-bottom:60px;
+}
+
+.name, .email, .phone {
+  display: block;
+  margin-top: 5px;
 }
 
 p.text-section {
@@ -34,4 +45,8 @@ strong {
 
 ul {
   margin: 5px 0;
+}
+
+.form-only {
+  display:none;
 }
