@@ -508,3 +508,7 @@ hr {
   -moz-transform: scale(1.15);
   transform: scale(1.15);
 }
+
+.print-only {
+  display:none;
+}

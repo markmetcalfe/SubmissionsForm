@@ -65,7 +65,7 @@ class Form extends Component {
       } else if(!data.required && (question.response === "undefined" || question.response.length===0) ){
         continue;
       } else if(data.type === "details"){
-        out_text = question.response;
+        out_text = "<span class=\""+data.class+"\">"+question.response+"</span>";
       } else if(data.type === "single"){
         out_text = data.title+question.response;
       }
@@ -177,6 +177,8 @@ class FormComponent extends Component {
 
   handleKeyEvent(event){
     this.response = event.target.value;
+    if(this.props.data.after_text && this.response.length>0) 
+      this.response += this.props.data.after_text;
     this.props.form.handleChange(event);
   }
 }
@@ -228,6 +230,8 @@ class Question extends FormComponent {
     this.selected = object.radioBtn;
     this.optionsText = object.expanded();
     this.response = this.textarea.value;
+    if(this.props.data.after_text && this.textarea.value.length>0) 
+      this.response += this.props.data.after_text;
     this.props.form.handleChange(event);
   }
 
