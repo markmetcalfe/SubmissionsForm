@@ -3,36 +3,36 @@
 }
 
 body {
-  font: 14pt "-apple-system","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font: 10.5px "-apple-system","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
   margin: 0;
 }
 
 p {
-  margin: 5pt 0;
+  margin: 0.5em 0;
 }
 
 .paragraph-divider {
     display: block;
-    height: 10pt;
+    height: 0.5em;
 }
 
 .print-divider {
   display:block;
-  margin-bottom: 28pt;
+  margin-bottom: 1.8em;
 }
 
 .double-divider {
   display:block;
-  margin-bottom:60pt;
+  margin-bottom:4em;
 }
 
 .name, .email, .phone {
   display: block;
-  margin-top: 5pt;
+  margin-top: 0.5em;
 }
 
 p.text-section {
-  margin: 20pt 0;
+  margin: 1em 0;
 }
 
 p.text-section:first-child {
@@ -44,7 +44,7 @@ strong {
 }
 
 ul {
-  margin: 5pt 0;
+  margin: 0.5em 0;
 }
 
 .form-only {
