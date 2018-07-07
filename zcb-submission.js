@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
   next(); 
 });
 
-app.post('/submit', (req, res) => {
+app.post('/', (req, res) => {
   let title = req.body.details.name+"'s Zero Carbon Bill Submission";
   createPDF(createHTML(req.body), function(file){
     let person = {
