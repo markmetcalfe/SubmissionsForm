@@ -90,7 +90,7 @@ class Form extends Component {
 
     let elementData = this.getElementData();
 
-    fetch('http://localhost:8003/submit', {
+    fetch('/submit/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

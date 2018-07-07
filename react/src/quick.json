@@ -122,7 +122,7 @@
     "finished":[
         "<p>Submitting...</p><p style=\"font-size:20px;\">This may take up to 15 seconds</p>",
         "<p>Submitted!</p><p style=\"font-size:20px;\">Check your email for a copy</p>",
-        "<p>Failed to Submit :(</p>"
+        "<p>Failed to Submit 😞</p>"
     ]
 }
 
