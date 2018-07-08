@@ -1,8 +1,10 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 tmp/
+pdfs/
 mail_config.json
-sendgrid.json
+gmail_credentials.json
+mysql_credentials.json
 
 package-lock.json
 

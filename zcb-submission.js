@@ -7,26 +7,34 @@ const inlineCss = require('inline-css');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const mysql_credentials = require('./mysql_credentials.json');
+const mysql_lib = require('mysql');
+const mysql = mysql_lib.createConnection({
+  host: mysql_credentials.host,
+  user: mysql_credentials.user,
+  password: mysql_credentials.password,
+  database: mysql_credentials.database
+});
+mysql.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected to "+mysql_credentials.database+" database.");
+});
+
 const nodemailer = require('nodemailer');
-const emailCredentials = require('./mail_config.json');
+const gmailCredentials = require('./gmail_credentials.json');
+const emailConfig = require('./email_config.json');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: emailCredentials.user,
-    pass: emailCredentials.pass
+    user: gmailCredentials.user,
+    pass: gmailCredentials.pass
   }
 });
-
-const emailNotes = require('./email_notes.json');
-const MFE = {
-  name: "Ministry for the Environment",
-  address: "mark.ls.metcalfe@gmail.com"
-}
 
 const fs = require('fs');
 const pdf = require('html-pdf');
 const options = {
-  "directory": "/tmp",
+  "directory": "/pdfs",
   "format": "A4",
   "orientation": "portrait",
   "border": {
@@ -48,7 +56,10 @@ app.use(function(req, res, next) {
 
 app.post('/', (req, res) => {
   let title = req.body.details.name+"'s Zero Carbon Bill Submission";
-  createPDF(createHTML(req.body), function(file){
+  let html = createHTML(req.body);
+  let hash = md5(html);
+  insertIntoDatabase(req.body.details, hash, req.body.type);
+  createPDF(html, hash, function(file){
     let person = {
       name: req.body.details.name,
       address: req.body.details.email
@@ -56,9 +67,9 @@ app.post('/', (req, res) => {
     let MFE_options = {
       from: person,
       replyTo: person,
-      to: MFE,
+      to: emailConfig.recipient,
       subject: title,
-      html: emailNotes.for_recipient+req.body.details.name,
+      html: emailConfig.notes.for_recipient+req.body.details.name,
       attachments: [
         {
           filename: title+'.pdf',
@@ -72,7 +83,7 @@ app.post('/', (req, res) => {
       replyTo: person,
       to: person,
       subject: "Your Submission on the Zero Carbon Bill",
-      html: emailNotes.for_sender+emailNotes.for_recipient+req.body.details.name,
+      html: emailConfig.notes.for_sender+emailConfig.notes.for_recipient+req.body.details.name,
       attachments: [
         {
           filename: title+'.pdf',
@@ -81,10 +92,15 @@ app.post('/', (req, res) => {
         }
       ]
     };
-    transporter.sendMail(MFE_options);
-    transporter.sendMail(recipient_options, function(err,info){
+    transporter.sendMail(MFE_options, function(err,info){
       if(err) res.sendStatus(500);
-      else res.sendStatus(200);
+      else transporter.sendMail(recipient_options, function(err,info){
+        if(err) res.sendStatus(500);
+        else {
+          console.log("Email sent.");
+          res.sendStatus(200);
+        }
+      });
     });
   });
 });
@@ -103,10 +119,18 @@ function createHTML(data){
   return html;
 }
 
-function createPDF(html, done){
-  let hash = md5(html);
-  pdf.create(html, options).toFile('./tmp/'+hash+".pdf", function(err, res) {
+function createPDF(html, filename, done){
+  pdf.create(html, options).toFile('./pdfs/'+filename+".pdf", function(err, res) {
     if (err) return console.log(err);
     else done(res.filename);
+  });
+}
+
+function insertIntoDatabase(details, filename, type){
+  let query = "insert into submission (name, email, phone, filename, type) \
+    values ('"+details.name+"', '"+details.email+"', '"+details.phone+"', '"+filename+"', '"+type+"');";
+  mysql.query(query, function (err, result) {
+    if(err) console.log("Error adding database rows");
+    else console.log("Added submission to database.");
   });
 }

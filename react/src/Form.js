@@ -35,11 +35,11 @@ class Form extends Component {
   handleRequired(){
     let ommitted = false;
     let email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(!email_regex.test(String(this.details.email.response))){
+    if(!email_regex.test(String(this.details.email.response)) || this.details.email.response.length>100){
       this.details.email.triggerRequired();
       ommitted = true;
     }
-    if(this.details.name.response.length===0){
+    if(this.details.name.response.length===0 || this.details.name.response.length>100){
       this.details.name.triggerRequired();
       ommitted = true;
     } 
@@ -80,6 +80,7 @@ class Form extends Component {
       details_elems[d] = this.details[d].response;
     }
     toSend["details"] = details_elems;
+    toSend["type"] = this.props.globalClass;
     return toSend;
   }
 
