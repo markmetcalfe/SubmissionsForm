@@ -87,12 +87,9 @@ class Form extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    //if(this.handleRequired()) return;
+    if(this.handleRequired()) return;
 
     let elementData = this.getElementData();
-
-    console.log(elementData);
-    return false;
 
     fetch('/submit/', {
       method: 'POST',
