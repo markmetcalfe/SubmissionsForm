@@ -282,7 +282,6 @@ class MultiQuestion extends Question {
   handleKeyEvent(event, num){
     this.responses[num] = event.target.value;
     this.response = this.getResponse(this.responses);
-    console.log(this.response);
     this.props.form.handleChange(event);
   }
 
