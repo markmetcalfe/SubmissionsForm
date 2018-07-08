@@ -66,7 +66,7 @@ class Form extends Component {
         continue;
       } else if(data.type === "details"){
         out_text = "<span class=\""+data.class+"\">"+question.response+"</span>";
-      } else if(data.type === "single"){
+      } else if(data.type === "single" || data.type === "multi"){
         out_text = data.title+question.response;
       }
       text_elems.push(out_text);
@@ -87,9 +87,12 @@ class Form extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    if(this.handleRequired()) return;
+    //if(this.handleRequired()) return;
 
     let elementData = this.getElementData();
+
+    console.log(elementData);
+    return false;
 
     fetch('/submit/', {
       method: 'POST',
@@ -132,7 +135,7 @@ class Form extends Component {
         if(questions[i].type === "multi")
           elems.push(<MultiQuestion data={questions[i]} num={i} form={this} key={i}></MultiQuestion>)
         else if(questions[i].type === "single")
-          elems.push(<Question data={questions[i]} num={i} form={this} key={i}></Question>)
+          elems.push(<SingleQuestion data={questions[i]} num={i} form={this} key={i}></SingleQuestion>)
         else if(questions[i].type === "text")
           elems.push(<Text data={questions[i]} num={i} form={this} key={i}></Text>)
         else if(questions[i].type === "details")
@@ -216,6 +219,19 @@ class Details extends FormComponent {
 }
 
 class Question extends FormComponent {
+  render(){
+    return(
+      <section className={this.props.data.type}>
+        <p className="title" dangerouslySetInnerHTML={{ __html: this.props.data.title }}></p>
+        {this.getTextBox()}
+      </section>
+    )
+  }
+
+  getTextBox(){};
+}
+
+class SingleQuestion extends Question {
   constructor(props){
     super(props);
     if(this.props.data.input === "simple"){
@@ -224,70 +240,64 @@ class Question extends FormComponent {
       this.textarea = <ContentEditable html={this.props.data.textbox} onChange={(e)=>this.handleKeyEvent(e)} />
     }
     this.response = this.props.data.textbox+"";
-    this.options = [];
   }
 
-  handleClick(event, object){
-    this.selected = object.radioBtn;
-    this.optionsText = object.expanded();
-    this.response = this.textarea.value;
-    if(this.props.data.after_text && this.textarea.value.length>0) 
-      this.response += this.props.data.after_text;
-    this.props.form.handleChange(event);
-  }
-
-  render(){
+  getTextBox(){
     return(
-      <section className={this.props.data.type}>
-        <p className="title" dangerouslySetInnerHTML={{ __html: this.props.data.title }}></p>
+      <div className="textbox-single">
         <p className="description" dangerouslySetInnerHTML={{ __html: this.props.data.description }}></p>
-        {this.getOptions()}
-        {this.optionsText}
-        {this.getTextArea()}
-      </section>
+        {this.textarea}
+      </div>
     )
   }
-
-  getTextArea(){return <span>{this.textarea}</span>}
-  getOptions(){}
 }
 
 class MultiQuestion extends Question {
-  getOptions(){
-    let out = []
-    for(let i=0; i<this.props.data.options.length; i++){
-      out.push(<Answer data={this.props.data} question={this} form={this.props.form}
-        parent={this.props.num} key={this.props.num.toString()+i.toString()} i={i}></Answer>)
-    }
-    return <div className="options">{out}</div>
-  }
-
-  getTextArea(){ if(typeof this.selected !== "undefined") return <span>{this.textarea}</span>}
-}
-
-class Answer extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.optionData = this.props.data.options[this.props.i]
-    this.data = this.props.data;
-    this.id = this.props.parent.toString()+this.props.i.toString();
-    this.radioBtn = <input type="radio" name={this.props.parent} id={this.id} onChange={((e) => this.props.question.handleClick(e, this))}></input>
-  }
-
-  render(){
-    return <label className="button">{this.radioBtn}
-      <span className="custom-radio"></span>
-      <span className="text">{this.optionData.option}</span>
-      </label>
-  }
-
-  expanded(){
-    if(this.props.question.selected === this.radioBtn){
-      return <div>
-        <p className="clicked">{this.optionData.clicked}</p>
-        <p className="clicked-description">{this.optionData.clicked_description}</p>
-      </div>
+    this.textboxData = this.props.data.textboxes;
+    this.textboxes = [];
+    this.responses = [];
+    for(let i=0; i<this.textboxData.length; i++){
+      if(this.textboxData[i].input === "simple"){
+        this.textboxes.push(<input type="text" placeholder={this.textboxData[i].placeholder} onChange={(e)=>this.handleKeyEvent(e,i)} key={i}></input>)
+      } else if(this.textboxData[i].input === "rich"){
+        this.textboxes.push(<ContentEditable html={this.textboxData[i].text} onChange={(e)=>this.handleKeyEvent(e,i)} key={i} />)
+      }
+      this.responses.push(this.textboxData[i].text);
     }
+    this.response = this.getResponse(this.responses);
+  }
+  
+  getTextBox(){
+    let elems = [];
+    for(let i=0; i<this.textboxes.length; i++){
+      elems.push(
+        <div className="textbox-multi" key={i}>
+          <p className="description" dangerouslySetInnerHTML={{ __html: this.textboxData[i].description }}></p>
+          {this.textboxes[i]}
+        </div>
+      );
+    }
+    return(<span>{elems}</span>)
+  }
+
+  handleKeyEvent(event, num){
+    this.responses[num] = event.target.value;
+    this.response = this.getResponse(this.responses);
+    console.log(this.response);
+    this.props.form.handleChange(event);
+  }
+
+  getResponse(responses){
+    let response = "";
+    for(let i=0; i<responses.length; i++){
+      response += responses[i];
+      if(this.textboxData[i].after_text && responses[i].length>0)
+        response += this.textboxData[i].after_text;
+      else if(i<responses.length-1) response += " ";
+    }
+    return response;
   }
 }
 

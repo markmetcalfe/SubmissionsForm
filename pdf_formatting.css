@@ -48,5 +48,12 @@ ul {
 }
 
 .form-only {
-  display:none;
+  display:none!important;
+}
+
+.section-heading {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
 }

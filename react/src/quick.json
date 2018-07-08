@@ -7,7 +7,7 @@
     "questions": [
         {
             "type":"text",
-            "text":"<span class=\"print-divider\"></span>Dear Ministry for the Environment Zero Carbon Bill team<strong style=\"display:block;margin-top:10px; font-size:1.2em\">A healthy Zero Carbon Act is fast, fair, firm, and Tiriti-founded</strong><span class=\"print-divider\"></span>"
+            "text":"<span class=\"print-divider\"></span>Dear Ministry for the Environment Zero Carbon Bill team<strong style=\"display:block;margin-top:10px; font-size:1.2em\">A healthy Zero Carbon Act is fast, fair, firm, and founded on Te Tiriti</strong><span class=\"print-divider\"></span>"
         },
         {
             "title":"As a ",
@@ -113,7 +113,7 @@
         }
     ],
     "footer": {
-        "text":"By clicking “Submit Now”, you are sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.",
+        "text":"<p>By clicking “Submit Now”, you are agreeing to this data being retained by OraTaiao. OraTaiao will not make this data or your personal details public in any way, email you or share your contact details. If you prefer otherwise, please email us at <a href=\"mailto:contact@zerocabonbillhealth.org.nz\" rel=\"noopener noreferrer\" target=\"_blank\">contact@zerocabonbillhealth.org.nz</a>. Our privacy policy is <a href=\"http://www.orataiao.org.nz/privacy_policy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.</p><p>You are also sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.</p>",
         "checkbox": {
             "label":"I ask the Ministry for the Environment to withhold my name and personal details from website public posting.",
             "description":"Select this if you want your name and personal details withheld from the MFE website",

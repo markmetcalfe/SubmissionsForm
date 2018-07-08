@@ -510,5 +510,24 @@ hr {
 }
 
 .print-only {
-  display:none;
+  display:none!important;
+}
+
+.section-heading {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.header p {
+  margin: 10px auto;
+  max-width: 700px;
+  padding: 0 3vmin;
+  text-align: center;
+}
+
+.full *[contenteditable="true"] {
+  max-height: 150px;
+  overflow-y: auto;
 }
