@@ -35,7 +35,7 @@
             "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">2050 target</p>"
         },
         {
-            "title":"1. What process should the Government use to set a new emissions reduction target in legislation?",
+            "title":"<u>1. What process should the Government use to set a new emissions reduction target in legislation?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -54,7 +54,7 @@
             ]
         },
         {
-            "title":"2. If the Government sets a 2050 target now, which is the best target for New Zealand?",
+            "title":"<span class=\"print-divider\"></span><u>2. If the Government sets a 2050 target now, which is the best target for New Zealand?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "title":"3. How should New Zealand meet its targets?",
+            "title":"<span class=\"print-divider\"></span><u>3. How should New Zealand meet its targets?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -92,7 +92,7 @@
             ]
         },
         {
-            "title":"4. Should the Zero Carbon Bill allow the 2050 target to be revised if circumstances change?",
+            "title":"<span class=\"print-divider\"></span><u>4. Should the Zero Carbon Bill allow the 2050 target to be revised if circumstances change?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -115,7 +115,7 @@
             "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Emissions budgets</p>"
         },
         {
-            "title":"5. The Government proposes that three emissions budgets of five years each (ie. covering the next 15 years) be in place at any given time. Do you agree with this proposal?",
+            "title":"<u>5. The Government proposes that three emissions budgets of five years each (ie. covering the next 15 years) be in place at any given time. Do you agree with this proposal?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -134,7 +134,7 @@
             ]
         },
         {
-            "title":"6. Should the Government be able to alter the last emissions budget (ie, furthest into the future)?",
+            "title":"<span class=\"print-divider\"></span><u>6. Should the Government be able to alter the last emissions budget (ie, furthest into the future)?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -153,7 +153,7 @@
             ]
         },
         {
-            "title":"7. Should the Government have the ability to review and adjust the second emissions budget within a specific range under exceptional circumstances?",
+            "title":"<span class=\"print-divider\"></span><u>7. Should the Government have the ability to review and adjust the second emissions budget within a specific range under exceptional circumstances?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -172,7 +172,7 @@
             ]
         },
         {
-            "title":"8. Do you agree with the considerations we propose that the Government and the Climate Change Commission take into account when advising on and setting budgets?",
+            "title":"<span class=\"print-divider\"></span><u>8. Do you agree with the considerations we propose that the Government and the Climate Change Commission take into account when advising on and setting budgets?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -195,7 +195,7 @@
             "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Government response</p>"
         },
         {
-            "title":"9. Should the Zero Carbon Bill require Governments to set out plans within a certain timeframe to achieve the emissions budgets?",
+            "title":"<u>9. Should the Zero Carbon Bill require Governments to set out plans within a certain timeframe to achieve the emissions budgets?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -214,7 +214,7 @@
             ]
         },
         {
-            "title":"10. What are the most important issues for the Government to consider in setting plans to meet budgets? For example, who do we need to work with, what else needs to be considered?",
+            "title":"<span class=\"print-divider\"></span><u>10. What are the most important issues for the Government to consider in setting plans to meet budgets? For example, who do we need to work with, what else needs to be considered?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -237,14 +237,14 @@
             "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Climate Change Commission</p>"
         },
         {
-            "title":"11. The Government has proposed that the Climate Change Commission advises on and monitors New Zealand’s progress towards its goals. Do you agree with these functions?",
+            "title":"<u>11. The Government has proposed that the Climate Change Commission advises on and monitors New Zealand’s progress towards its goals. Do you agree with these functions?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
                 {
                 "input":"rich",
                 "description":"Recommended answer (edit or add your own thoughts here...)",
-                "text":"<b>Yes, but also the Commission must set NZ’s Emissions Budgets – like the Reserve Bank independently sets NZ’s Official Cash Rate.</p>",
+                "text":"<p>Yes, but also the Commission must set NZ’s Emissions Budgets – like the Reserve Bank independently sets NZ’s Official Cash Rate.</p>",
                 "after":""
                 },
                 {
@@ -256,7 +256,7 @@
             ]
         },
         {
-            "title":"12. What role do you think the Climate Change Commission should have in relation to the New Zealand Emissions Trading Scheme (NZ ETS)?",
+            "title":"<span class=\"print-divider\"></span><u>12. What role do you think the Climate Change Commission should have in relation to the New Zealand Emissions Trading Scheme (NZ ETS)?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -275,7 +275,7 @@
             ]
         },
         {
-            "title":"13. The Government has proposed that Climate Change Commissioners need to have a range of essential and desirable expertise. Do you agree with the proposed expertise?",
+            "title":"<span class=\"print-divider\"></span><u>13. The Government has proposed that Climate Change Commissioners need to have a range of essential and desirable expertise. Do you agree with the proposed expertise?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -298,7 +298,7 @@
             "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Adapting to the impacts of climate change</p>"
         },
         {
-            "title":"14. Do you think the Zero Carbon Bill should cover adapting to climate change?",
+            "title":"<u>14. Do you think the Zero Carbon Bill should cover adapting to climate change?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -317,7 +317,7 @@
             ]
         },
         {
-            "title":"15. The Government has proposed a number of new functions to help us adapt to climate change. Do you agree with the proposed functions?",
+            "title":"<span class=\"print-divider\"></span><u>15. The Government has proposed a number of new functions to help us adapt to climate change. Do you agree with the proposed functions?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -336,7 +336,7 @@
             ]
         },
         {
-            "title":"16. Should we explore setting up a targeted adaptation reporting power that could see some organisations share information on their exposure to climate change risks?",
+            "title":"<span class=\"print-divider\"></span><u>16. Should we explore setting up a targeted adaptation reporting power that could see some organisations share information on their exposure to climate change risks?</u>",
             "required":true,
             "type":"multi",
             "textboxes":[
@@ -355,7 +355,7 @@
             ]
         },
         {
-            "title":"<span class=\"print-divider\"></span>As a ",
+            "title":"<span class=\"double-divider\"></span>As a ",
             "after_text":", ",
             "description":"Add your role(s) here if you like. If not, then this will be ommitted.",
             "required":false,
