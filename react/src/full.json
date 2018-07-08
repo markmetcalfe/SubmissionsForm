@@ -1,16 +1,362 @@
 {
     "header":{
-        "title":"Here’s the full online submission",
+        "title":"Here’s our full online submission",
         "subtitle": "A healthy Zero Carbon Act is fast, fair, firm, and founded on Te Tiriti",
-        "content": "but your own voice matters the most, so do add your ideas."
+        "content": "This includes recommended answers and comments to all 16 of the Ministry for the Environment’s submission discussion questions – for you to add, edit or replace. Your own voice matters the most for this submission, so include your ideas. Filling out this submission form will create a pdf in your name which will be emailed to the Ministry for the Environment, plus a copy to you."
     }, 
     "questions": [
         {
             "type":"text",
-            "text":"Dear Ministry for the Environment Zero Carbon Bill team<strong style=\"display:block;margin-top:10px; font-size:1.2em\">A healthy Zero Carbon Act is fast, fair, firm, and founded on Te Tiriti</strong>"
+            "text":"<span class=\"print-divider\"></span>Dear Ministry for the Environment Zero Carbon Bill team<strong style=\"display:block;margin-top:10px; font-size:1.2em\">A healthy Zero Carbon Act is fast, fair, firm, and founded on Te Tiriti</strong><span class=\"print-divider\"></span>"
         },
         {
             "title":"As a ",
+            "after_text":", ",
+            "description":"Add your role(s) here if you like. If not, then this will be ommitted.",
+            "required":false,
+            "type":"single",
+            "input": "simple",
+            "placeholder":"e.g. Nurse/Student/etc"
+        },
+        {
+            "title":"",
+            "description":"Edit or add your own thoughts here...",
+            "required":true,
+            "type":"single",
+            "input":"rich",
+            "textbox":"I want:<ul><li>the Zero Carbon Act to <strong>grow great health co-benefits and health equity</strong> in Aotearoa,</li><li>the Climate Change Commission to include <b>Commissioners and staff who understand climate change health impacts and opportunities</b> now, and in future, from well-designed healthy climate action.</li></ul><br>I want to work with health colleagues to:<ul><li><strong>help our health sector quickly reach net zero emissions,</strong></li></ul><br>and I expect:<ul><li><strong>savings</strong> from reduced health sector emissions <strong>devoted to better health-care.</strong></li></ul>"
+        },
+        {
+            "type":"text",
+            "text":"<span class=\"form-only\"><span class=\"paragraph-divider\"></span><strong style=\"display:block;margin-top:10px; font-size:1.5em\">Ministry for Environment Zero Carbon Bill<br>Responses to all 16 Submission Discussion Questions:</strong><br><p>Remember your own voice matters the most for this submission, so add your ideas.</p><span class=\"paragraph-divider\"></span></span>"
+        },
+        {
+            "type":"text",
+            "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">2050 target</p>"
+        },
+        {
+            "title":"1. What process should the Government use to set a new emissions reduction target in legislation?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>The <b>2040</b> target should be set in legislation now - informed by IPCC’s Special Report on Global Warming of 1.5°C (due this October 2018).</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>NZ (businesses, iwi, communities, whānau, households, and the health sector) need <b>certainty</b> and transparency to act fast now.</p><p>New Zealand is a signatory to the 2015 Paris Agreement, in which all countries committed to limiting average temperature rise to well below 2°C – and to pursue efforts to limit temperature increase to 1.5°C.</p><p>Since then, the second draft of the IPCC Special Report on Global Warming of 1.5oC finds <b>substantial differences in the harmful effects</b> of global warming limited to 1.5°C compared to 2°C above pre-industrial levels – where the 0.5°C warming difference is critical for vulnerable regions.</p><p>Limiting global warming to <b>1.5°C</b> sensibly will require global anthropogenic CO2 emissions to reach <b>net-zero by 2040</b>, together with rapid reductions in other emissions, particularly methane.</p><p>Within these limits, we need to distribute efforts across countries fairly.</p><p>IPCC’s Special Report on Global Warming of 1.5°C (due this October 2018) must inform NZ’s Zero Carbon Act.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"2. If the Government sets a 2050 target now, which is the best target for New Zealand?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>“Net zero emissions across all greenhouse gases by <b>2040</b> – adjusted for any new evidence from the IPCC 1.5 report, which may indicate a target of net zero earlier than this date.”</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>What matters is <b>total net emissions</b> in our atmosphere – so we do not breach any tipping points at <b>any</b> time.</p><p>The final version of the Zero Carbon Act must be decided in light of the IPCC’s <b>Special 1.5°C report</b> due this October.</p><p>Three of NZ’s main greenhouse gases, <b>carbon dioxide, nitrous oxide and methane</b>, continue to damage our climate and/or oceans for <b>hundreds</b> of years or more.</p><p>Keeping within the safer, healthier global warming limit of <b>1.5°C</b>, sensibly, requires global anthropogenic CO2 emissions to reach net-zero <b>by 2040</b>, together with rapid reductions in other emissions, particularly methane. And within these limits, we need to distribute efforts across countries fairly.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"3. How should New Zealand meet its targets?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>“<b>Domestic</b> emissions reductions only (including from reforestation, horticultural planting and improved soil health).”</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>International emissions units will be <b>volatile</b> in price – and relying on these undermines decisive domestic investment here in NZ.</p><p>Relying on international tradeable emissions units means NZ misses out on opportunities for wellbeing and equity co-benefits of reducing our domestic emissions. This means delaying the real changes for later, when they may be poorly planned and rapidly executed, with fewer co-benefits and greater likelihood for negative unintended consequences than well thought out plans starting now.</p><p><b>Reforestation, horticultural planting</b> and improved soil health (which will absorb some of New Zealand’s carbon dioxide emissions), can be part of meeting our domestic net zero emissions target.</p><p>But our <b>main focus</b> must be <b>rapidly reducing NZ’s greenhouse gas emissions</b> – all gases, all sectors. NZ (businesses, iwi, communities, whānau, households, and all sectors including the health sector) needs <b>certainty</b> to act decisively now.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"4. Should the Zero Carbon Bill allow the 2050 target to be revised if circumstances change?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes – but only to <b>increase</b> climate action ambition in response to updated scientific recommendations. There must be no backsliding (i.e. weakening of the target).</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>NZ (businesses, iwi, communities, whānau, households, and all sectors including the health sector) needs <b>certainty</b> to act now.</p><p>A key recommendation from the Productivity Commission’s draft report (April 2018) was the importance of <b>long term climate policy commitments</b> through institutional, including statutory legal and regulatory, structures and processes.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "type":"text",
+            "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Emissions budgets</p>"
+        },
+        {
+            "title":"5. The Government proposes that three emissions budgets of five years each (ie. covering the next 15 years) be in place at any given time. Do you agree with this proposal?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>Three <b>6-year</b> emissions budgets covering the next 18 years, with our “legislated net zero emissions by 2040 target”, gives the <b>certainty</b> needed for action and investment now.</p><p>Given the urgent need for global emissions to peak by 2020, the Act could also include the requirement for the Commission to urgently set <b>an initial 2-year Emissions Budget</b>. This 2-year Budget would fit within the first 5-year Emissions Budget.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"6. Should the Government be able to alter the last emissions budget (ie, furthest into the future)?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>No – but the Zero Carbon Act should permit any Government to act so NZ <b>can emit less</b> than budgeted.</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>However, emissions budgets can not be <b>increased</b>, unless the Government <b>changes the Act</b> through the usual Parliamentary process.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"7. Should the Government have the ability to review and adjust the second emissions budget within a specific range under exceptional circumstances?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>No – but the Zero Carbon Act should permit any Government to act so NZ <b>can emit less</b> than budgeted.</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>The Zero Carbon Act should permit any Government to act so NZ can emit less than budgeted.</p><p>If there are exceptional circumstances, the Government can change the Zero Carbon Act, to increase the emissions budget, through the usual Parliamentary process. Although it is hard to imagine any exceptional circumstances that could justify delaying in reducing our far-reaching climate change risks.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"8. Do you agree with the considerations we propose that the Government and the Climate Change Commission take into account when advising on and setting budgets?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>No</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>The <b>physics of climate change comes first</b> for setting Emissions Budgets – the bottom line is what ends up in our shared global atmosphere and oceans, and making sure tipping points are never breached.</p><p>As the impacts of unmitigated climate change will be highly regressive on New Zealanders the priority must be robust emissions budgets.</p><p>The Climate Commission’s <b>Emissions Budgets</b> must be consistent with the best possible chance of limiting global warming to <b>1.5</b>°C <b>degrees</b> and the <b>greater responsibility</b> of well-resourced nations like NZ, with Budget considerations limited to:</p><ol type=\"A\"><li>Scientific knowledge about climate change, sea level rise and ocean acidification</li><li>Obligations under Te Tiriti o Waitangi</li><li>Global leadership, including international equity</li></ol><p>The Commission then <b>advises the Government on mitigation policies</b> (including Emissions Trading Scheme (ETS) settings) for the Government plans to keep NZ’s future emissions within the Commission’s budgets.</p><p>Te Tiriti O Waitangi obligations and fairness within New Zealand are top priorities for policy and planning.</p><p>Other considerations include substantial health co-benefits and technology relevant to climate change – in ensuring a fairer, just, sustainable Aotearoa-NZ.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "type":"text",
+            "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Government response</p>"
+        },
+        {
+            "title":"9. Should the Zero Carbon Bill require Governments to set out plans within a certain timeframe to achieve the emissions budgets?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>The Zero Carbon Act must require the <b>Government to respond by publishing plans</b> to stay within budget as rapidly as feasible, within a set time limit that is certainly less than 12 months.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"10. What are the most important issues for the Government to consider in setting plans to meet budgets? For example, who do we need to work with, what else needs to be considered?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>The most important issues to consider are Te Tiriti o Waitangi obligations and fairness within Aotearoa-NZ.</p><p>This means <b>health equity</b> is essential in planning and monitoring – all regressive policies (including ETS settings) must be effectively offset for vulnerable communities.</p><p>The <b>substantial co-benefits to health</b> from well-designed reduction and mitigation must be considered.</p><p>Other considerations include <b>sustainable economic opportunities</b> and <b>technology</b> relevant to climate change, to grow a fairer, just, sustainable Aotearoa-NZ.</p><p>The Government must work in Te Tiriti partnership, and with NZ’s most vulnerable communities (those already disadvantaged and those working in high-emissions industries), to create a <b>hopeful, fairer future</b>.</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>We must strive to <b>reduce inequalities</b> between Māori and other New Zealanders, and <b>value</b> the concepts of kaitiakitanga (guardianship), aroha (love/compassion), manaakitanga (caring), whakatipuranga (future generations), hauora (health and wellbeing), and tika (integrity/doing what’s right).</p><p>The direct and indirect health effects of climate change will have a <b>greater impact</b> on those already suffering from disadvantage and poorer health in New Zealand – children, elderly, low-income, Māori and Pacific populations, and people living with disabilities, acute or chronic illnesses.</p><p>Climate action that <b>prioritises health equity</b> has significant potential to reduce existing, and prevent future health inequities (e.g. retrofitting insulation to make homes warm and dry can reduce childhood asthma and chest infections – as leading causes of hospital admissions, particularly for Māori and Pacific children).</p><p>Overall, mitigation strategies must <b>contribute to achieving equity</b> by improving outcomes for Māori and other groups experiencing disadvantage and discrimination.</p><p>Financial costs of climate change responses can be <b>offset by the cost-savings of health co-benefits</b>. For example, health benefits from zero-carbon public and active transport include increased physical activity, improved social connections and more equitable access to education and employment.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "type":"text",
+            "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Climate Change Commission</p>"
+        },
+        {
+            "title":"11. The Government has proposed that the Climate Change Commission advises on and monitors New Zealand’s progress towards its goals. Do you agree with these functions?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<b>Yes, but also the Commission must set NZ’s Emissions Budgets – like the Reserve Bank independently sets NZ’s Official Cash Rate.</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>The Commission can also advise how NZ stays within these budgets, how NZ can best adapt to climate changes, and monitor progress on NZ’s emissions reductions.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"12. What role do you think the Climate Change Commission should have in relation to the New Zealand Emissions Trading Scheme (NZ ETS)?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>The Commission should advise the Government on ETS policy settings so that New Zealand emits within budget.</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>The Commission must also identify the extent of regressive impacts from proposed ETS settings, and propose effective complementary policies which fairly compensate vulnerable households.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"13. The Government has proposed that Climate Change Commissioners need to have a range of essential and desirable expertise. Do you agree with the proposed expertise?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes, but health expertise amongst Commissioners and staffing is needed too. It is also essential that the Commission is founded on partnership with tāngata whenua and upholds obligations under Te Tiriti o Waitangi.</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>I propose a larger pool of Climate Commissioners so that Commissioners can be called in according to the focus area – for example, adaptation policy recommendations would require the oversight of Commissioners with Tiriti and equity expertise, local government, community and adaptation experience.</p><p>In addition to climate science, I see mātauranga Māori; Te Tiriti O Waitangi, te reo me ona tikanga Māori and Māori interests as high priority essential expertise amongst Commissioners. Health expertise must also be included, and it is essential that all Commissioners have equity expertise, and that equity issues are not marginalised. Finally, I consider that expertise in achieving social change is also important.</p><p>It is important that vested interests are not part of the Commission, particularly those with a financial interest in maintaining the health-harming status quo. In health, we have seen too many crucial policy processes derailed by those who have a financial stake in continuing to do harm.</p><p>The Commissioners should be sector experts, with a high level of standing in society.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "type":"text",
+            "text":"<span class=\"paragraph-divider\"></span><p class=\"section-heading\">Adapting to the impacts of climate change</p>"
+        },
+        {
+            "title":"14. Do you think the Zero Carbon Bill should cover adapting to climate change?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>Adaptation must be a separate advisory work stream, to avoid overtaking the Commission’s top priority climate mitigation role.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"15. The Government has proposed a number of new functions to help us adapt to climate change. Do you agree with the proposed functions?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>I support the following adaptation provisions (which include the health sector):</p><ul><li>a national climate change risk assessment</li><li>a national climate adaptation plan</li><li>regular review of progress towards implementing the national adaptation plan</li><li>an adaptation reporting plan</li></ul><p>Mitigation and adaptation are often deeply interlinked – so often mitigation and adaptation can be addressed together in the same policy (e.g. housing). But care must be taken in designing adaptation policies to ensure that climate-damaging emissions are not increased.</p><p>Adaptation must be dealt with by a separate working group, to avoid distraction from the top priority of mitigation.</p>A health adaptation plan must be put in place that covers both health sector adaptation and health-protecting adaptation in other sectors.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"16. Should we explore setting up a targeted adaptation reporting power that could see some organisations share information on their exposure to climate change risks?",
+            "required":true,
+            "type":"multi",
+            "textboxes":[
+                {
+                "input":"rich",
+                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "text":"<p>Yes</p>",
+                "after":""
+                },
+                {
+                "input":"rich",
+                "description":"Recommended comments (edit or add your own thoughts here...)",
+                "text":"<p>A targeted adaptation reporting power could start with voluntary reporting in the first year, and require compulsory reporting in subsequent years.</p>",
+                "after":""
+                }
+            ]
+        },
+        {
+            "title":"<span class=\"print-divider\"></span>As a ",
+            "after_text":", ",
             "description":"Add your role(s) here if you like. If not, then this will be ommitted.",
             "required":false,
             "type":"single",
@@ -22,152 +368,29 @@
             "text":"I want a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> – with health at its heart."
         },
         {
-            "title":"Question 1",
+            "title":"",
             "description":"Edit or add your own thoughts here...",
             "required":true,
+            "type":"single",
             "input":"rich",
-            "type":"multi",
-            "options": [
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 1 Description"
-                },
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 2 Description"
-                },
-                {
-                    "option":"Option 3",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 3 Description"
-                },
-                {
-                    "option":"Option 4",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 4 Description"
-                }
-            ],
-            "textbox":"Additional Response Here"
-        },
-        {
-            "title":"Question 2",
-            "description":"Edit or add your own thoughts here...",
-            "required":true,
-            "input":"rich",
-            "type":"multi",
-            "options": [
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 1 Description"
-                },
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 2 Description"
-                },
-                {
-                    "option":"Option 3",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 3 Description"
-                },
-                {
-                    "option":"Option 4",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 4 Description"
-                }
-            ],
-            "textbox":"Additional Response Here"
-        },
-        {
-            "title":"Question 3",
-            "description":"Edit or add your own thoughts here...",
-            "required":true,
-            "input":"rich",
-            "type":"multi",
-            "options": [
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 1 Description"
-                },
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 2 Description"
-                },
-                {
-                    "option":"Option 3",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 3 Description"
-                },
-                {
-                    "option":"Option 4",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 4 Description"
-                }
-            ],
-            "textbox":"Additional Response Here"
-        },
-        {
-            "title":"Question 4",
-            "description":"Edit or add your own thoughts here...",
-            "required":true,
-            "input":"rich",
-            "type":"multi",
-            "options": [
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 1 Description"
-                },
-                {
-                    "option":"Option 1",
-                    "clicked":"Great!",
-                    "clicked_description":"Option 2 Description"
-                },
-                {
-                    "option":"Option 3",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 3 Description"
-                },
-                {
-                    "option":"Option 4",
-                    "clicked":"OK then.",
-                    "clicked_description":"Option 4 Description"
-                }
-            ],
-            "textbox":"Additional Response Here"
+            "textbox":"<p>“<b>Fast</b>” means our Zero Carbon Act <b>fixes our NZ net zero target by 2040</b> in law (all sectors, all domestic emissions, plants and soil), to play our part in <b>confidently limiting average global warming to 1.5ºC.</b></p><p>“<b>Fair</b>” means New Zealand’s Climate Change Commission considers global fairness, and creates a fairer, just and sustainable Aotearoa-NZ.</p><p>“<b>Firm</b>” means New Zealanders have science-based, long-term legal certainty to act.</p><p>“<b>Tiriti-founded</b>” means the Zero Emissions Act is founded on Te <b>Tiriti o Waitangi partnership and values.</b></p>"
         },
         {
             "type":"text",
-            "text":"Because the Zero Carbon Act is an essential prescription for New Zealand’s health and wellbeing, I call for a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> with <strong>health at its heart.</strong>"
+            "text":"<span class=\"print-divider\"></span>Because the Zero Carbon Act is an essential prescription for New Zealand’s health and wellbeing, I call for a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> with <strong>health at its heart.</strong><span class=\"print-divider\"></span>"
         },
         {
-            "title":"<strong>In my own words:</strong><span class=\"paragraph-divider\"></span>",
-            "description":"Please use your own experience and expertise to add anything else here about why this Bill is important:",
+            "title":"<strong>In <span class=\"form-only\">my own words</span><span class=\"print-only\">particular</span>: </strong>",
+            "after_text":"<span class=\"print-divider\"></span>",
+            "description":"Please use your own experience and expertise to say why this Bill is important to you:",
             "required":false,
             "type":"single",
             "input":"rich",
             "textbox":""
         },
         {
-            "title":"As a ",
-            "description":"Add your role(s) here if you like. If not, then this will be ommitted.",
-            "required":false,
-            "type":"single",
-            "input": "simple",
-            "placeholder":"e.g. Nurse/Student/etc"
-        },
-        {
             "type":"text",
-            "text":"I want:<ul><li>the Zero Carbon Act to <b>grow great health co-benefits and health equity</b> in Aotearoa-NZ</li><li>the Climate Change Commission to include <b>Commissioners and staff who understand climate change health impacts and opportunities</b> now, and in future, from well-designed healthy climate action</li></ul><br>I want to work with health colleagues to:<ul><li><b>help our health sector quickly reach net zero emissions</b></li></ul><br>and I expect:<ul><li><b>savings</b> from reduced health sector emissions <b>devoted to better health-care.</b>"
-        },
-        {
-            "type":"text",
-            "text":"<span style=\"display:inline-block;margin:30px 0 0 0\">Yours sincerely, </span>"
+            "text":"<span class=\"double-divider\"></span>Yours sincerely, "
         },
         {
             "type":"details",
@@ -198,14 +421,14 @@
         }
     ],
     "footer": {
-        "text":"By clicking “Submit Now”, you are sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.",
+        "text":"<p>By clicking “Submit Now”, you are agreeing to this data being retained by OraTaiao. OraTaiao will not make this data or your personal details public in any way, email you or share your contact details. If you prefer otherwise, please email us at <a href=\"mailto:contact@zerocabonbillhealth.org.nz\" rel=\"noopener noreferrer\" target=\"_blank\">contact@zerocabonbillhealth.org.nz</a>. Our privacy policy is <a href=\"http://www.orataiao.org.nz/privacy_policy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.</p><p>You are also sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.</p>",
         "checkbox": {
-            "label":"I ask the Ministry for the Environment to withhold my name and personal details from public posting.",
-            "description":"Select this if you want your name and personal details withheld",
-            "withheld":"<b>Important Note: I politley ask the Ministry for the Environment to withhold my name and personal details from public posting.</b>",
+            "label":"I ask the Ministry for the Environment to withhold my name and personal details from website public posting.",
+            "description":"Select this if you want your name and personal details withheld from the MFE website",
+            "withheld":"<span class=\"print-divider\"></span><b>Important Note: Please withold my name and personal details from all website public posting.</b>",
             "default":false
         },
-        "button":"Submit Now!"
+        "button":"Submit Now"
     },
     "finished":[
         "<p>Submitting...</p><p style=\"font-size:20px;\">This may take up to 15 seconds</p>",
