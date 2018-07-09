@@ -350,13 +350,13 @@
                 "input":"rich",
                 "description":"Recommended comments (edit or add your own thoughts here...)",
                 "text":"<p>A targeted adaptation reporting power could start with voluntary reporting in the first year, and require compulsory reporting in subsequent years.</p>",
-                "after":"<span class=\"double-divider\"></span>"
+                "after":"<span class=\"print-only double-divider\"></span>"
                 }
             ]
         },
         {
-            "title":"As a ",
-            "after_text":", ",
+            "title":"<p>As a ",
+            "after_text":", </p>",
             "description":"Add your role(s) here if you like. If not, then this will be omitted.",
             "required":false,
             "type":"single",
@@ -365,7 +365,7 @@
         },
         {
             "type":"text",
-            "text":"I want a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> – with health at its heart."
+            "text":"<p>I want a Zero Carbon Act that’s <strong>fast, fair, firm and founded on Te Tiriti</strong> – with health at its heart.</p>"
         },
         {
             "title":"",
