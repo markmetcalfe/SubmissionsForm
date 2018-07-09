@@ -75,8 +75,14 @@ app.post('/', (req, res) => {
       ]
     };
     let recipient_options = {
-      from: person,
-      replyTo: person,
+      from: {
+        name: gmailCredentials.name,
+        address: gmailCredentials.user
+      },
+      replyTo: {
+        name: gmailCredentials.name,
+        address: gmailCredentials.replyTo
+      },
       to: person,
       subject: "Your Submission on the Zero Carbon Bill",
       html: emailConfig.notes.for_sender+emailConfig.notes.for_recipient+req.body.details.name,
