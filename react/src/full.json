@@ -12,7 +12,7 @@
         {
             "title":"As a ",
             "after_text":", ",
-            "description":"Add your role(s) here if you like. If not, then this will be ommitted.",
+            "description":"Add your role(s) here if you like. If not, then this will be omitted.",
             "required":false,
             "type":"single",
             "input": "simple",
@@ -24,7 +24,7 @@
             "required":true,
             "type":"single",
             "input":"rich",
-            "textbox":"I want:<ul><li>the Zero Carbon Act to <strong>grow great health co-benefits and health equity</strong> in Aotearoa,</li><li>the Climate Change Commission to include <b>Commissioners and staff who understand climate change health impacts and opportunities</b> now, and in future, from well-designed healthy climate action.</li></ul><br>I want to work with health colleagues to:<ul><li><strong>help our health sector quickly reach net zero emissions,</strong></li></ul><br>and I expect:<ul><li><strong>savings</strong> from reduced health sector emissions <strong>devoted to better health-care.</strong></li></ul>"
+            "textbox":"I want:<ul><li>the Zero Carbon Act to <strong>grow great health co-benefits and health equity</strong> in NZ,</li><li>the Climate Change Commission to include <b>Commissioners and staff who understand climate change health impacts and opportunities</b> now, and in future, from well-designed healthy climate action.</li></ul><br>I want to work with health colleagues to:<ul><li><strong>help our health sector quickly reach net zero emissions,</strong></li></ul><br>and I expect:<ul><li><strong>savings</strong> from reduced health sector emissions <strong>devoted to better health-care.</strong></li></ul>"
         },
         {
             "type":"text",
@@ -41,7 +41,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>The <b>2040</b> target should be set in legislation now - informed by IPCC’s Special Report on Global Warming of 1.5°C (due this October 2018).</p>",
                 "after":""
                 },
@@ -60,8 +60,8 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
-                "text":"<p>“Net zero emissions across all greenhouse gases by <b>2040</b> – adjusted for any new evidence from the IPCC 1.5 report, which may indicate a target of net zero earlier than this date.”</p>",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
+                "text":"<p>Net zero emissions across all greenhouse gases by <b>2040</b> – adjusted for any new evidence from the IPCC 1.5 report, which may indicate a target of net zero earlier than this date.</p>",
                 "after":""
                 },
                 {
@@ -79,8 +79,8 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
-                "text":"<p>“<b>Domestic</b> emissions reductions only (including from reforestation, horticultural planting and improved soil health).”</p>",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
+                "text":"<p><b>Domestic</b> emissions reductions only (including from reforestation, horticultural planting and improved soil health).</p>",
                 "after":""
                 },
                 {
@@ -98,7 +98,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes – but only to <b>increase</b> climate action ambition in response to updated scientific recommendations. There must be no backsliding (i.e. weakening of the target).</p>",
                 "after":""
                 },
@@ -121,8 +121,8 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
-                "text":"<p>Yes</p>",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
+                "text":"<p>Yes – but 6 year emissions budgets</p>",
                 "after":""
                 },
                 {
@@ -140,7 +140,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>No – but the Zero Carbon Act should permit any Government to act so NZ <b>can emit less</b> than budgeted.</p>",
                 "after":""
                 },
@@ -159,7 +159,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>No – but the Zero Carbon Act should permit any Government to act so NZ <b>can emit less</b> than budgeted.</p>",
                 "after":""
                 },
@@ -178,7 +178,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>No</p>",
                 "after":""
                 },
@@ -201,7 +201,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes</p>",
                 "after":""
                 },
@@ -220,7 +220,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>The most important issues to consider are Te Tiriti o Waitangi obligations and fairness within Aotearoa-NZ.</p><p>This means <b>health equity</b> is essential in planning and monitoring – all regressive policies (including ETS settings) must be effectively offset for vulnerable communities.</p><p>The <b>substantial co-benefits to health</b> from well-designed reduction and mitigation must be considered.</p><p>Other considerations include <b>sustainable economic opportunities</b> and <b>technology</b> relevant to climate change, to grow a fairer, just, sustainable Aotearoa-NZ.</p><p>The Government must work in Te Tiriti partnership, and with NZ’s most vulnerable communities (those already disadvantaged and those working in high-emissions industries), to create a <b>hopeful, fairer future</b>.</p>",
                 "after":""
                 },
@@ -243,7 +243,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes, but also the Commission must set NZ’s Emissions Budgets – like the Reserve Bank independently sets NZ’s Official Cash Rate.</p>",
                 "after":""
                 },
@@ -262,7 +262,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>The Commission should advise the Government on ETS policy settings so that New Zealand emits within budget.</p>",
                 "after":""
                 },
@@ -281,7 +281,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes, but health expertise amongst Commissioners and staffing is needed too. It is also essential that the Commission is founded on partnership with tāngata whenua and upholds obligations under Te Tiriti o Waitangi.</p>",
                 "after":""
                 },
@@ -304,7 +304,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes</p>",
                 "after":""
                 },
@@ -323,7 +323,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes</p>",
                 "after":""
                 },
@@ -342,7 +342,7 @@
             "textboxes":[
                 {
                 "input":"rich",
-                "description":"Recommended answer (edit or add your own thoughts here...)",
+                "description":"<span style=\"font-size: 14px\">Recommended answer</span> (edit or add your own thoughts here...)",
                 "text":"<p>Yes</p>",
                 "after":""
                 },
@@ -350,14 +350,14 @@
                 "input":"rich",
                 "description":"Recommended comments (edit or add your own thoughts here...)",
                 "text":"<p>A targeted adaptation reporting power could start with voluntary reporting in the first year, and require compulsory reporting in subsequent years.</p>",
-                "after":""
+                "after":"<span class=\"double-divider\"></span>"
                 }
             ]
         },
         {
-            "title":"<span class=\"double-divider\"></span>As a ",
+            "title":"As a ",
             "after_text":", ",
-            "description":"Add your role(s) here if you like. If not, then this will be ommitted.",
+            "description":"Add your role(s) here if you like. If not, then this will be omitted.",
             "required":false,
             "type":"single",
             "input": "simple",
@@ -373,7 +373,7 @@
             "required":true,
             "type":"single",
             "input":"rich",
-            "textbox":"<p>“<b>Fast</b>” means our Zero Carbon Act <b>fixes our NZ net zero target by 2040</b> in law (all sectors, all domestic emissions, plants and soil), to play our part in <b>confidently limiting average global warming to 1.5ºC.</b></p><p>“<b>Fair</b>” means New Zealand’s Climate Change Commission considers global fairness, and creates a fairer, just and sustainable Aotearoa-NZ.</p><p>“<b>Firm</b>” means New Zealanders have science-based, long-term legal certainty to act.</p><p>“<b>Tiriti-founded</b>” means the Zero Emissions Act is founded on Te <b>Tiriti o Waitangi partnership and values.</b></p>"
+            "textbox":"<p><b>Fast</b> means our Zero Carbon Act <b>fixes our NZ net zero target by 2040</b> in law (all sectors, all domestic emissions, plants and soil), to play our part in <b>confidently limiting average global warming to 1.5ºC.</b></p><p><b>Fair</b> means New Zealand’s Climate Change Commission considers global fairness, and creates a fairer, just and sustainable Aotearoa-NZ.</p><p><b>Firm</b> means New Zealanders have science-based, long-term legal certainty to act.</p><p><b>Tiriti-founded</b> means the Zero Emissions Act is founded on Te <b>Tiriti o Waitangi partnership and values.</b></p>"
         },
         {
             "type":"text",
@@ -407,7 +407,7 @@
             "required":true,
             "input":"email",
             "placeholder":"Your Email Address",
-            "description":"You'll also recieve a copy of this",
+            "description":"You'll also receive a copy of this submission",
             "error":"Please enter a valid email address"
         },
         {
@@ -424,16 +424,11 @@
         "text":"<p>By clicking “Submit Now”, you are agreeing to this data being retained by OraTaiao. OraTaiao will not make this data or your personal details public in any way, email you or share your contact details. If you prefer otherwise, please email us at <a href=\"mailto:contact@zerocabonbillhealth.org.nz\" rel=\"noopener noreferrer\" target=\"_blank\">contact@zerocabonbillhealth.org.nz</a>. Our privacy policy is <a href=\"http://www.orataiao.org.nz/privacy_policy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.</p><p>You are also sending your submission to the Ministry for the Environment. The Ministry may publish all or part of your submission (including your name) on its website or otherwise. Your submission could also be released to the public under the Official Information Act 1982. See Ministry for Environment Privacy Statement <a href=\"https:\/\/www.mfe.govt.nz/about-site/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>.</p>",
         "checkbox": {
             "label":"I ask the Ministry for the Environment to withhold my name and personal details from website public posting.",
-            "description":"Select this if you want your name and personal details withheld from the MFE website",
+            "description":"Select this if you want your name and personal details withheld from the Ministry website",
             "withheld":"<span class=\"print-divider\"></span><b>Important Note: Please withold my name and personal details from all website public posting.</b>",
             "default":false
         },
         "button":"Submit Now"
-    },
-    "finished":[
-        "<p>Submitting...</p><p style=\"font-size:20px;\">This may take up to 15 seconds</p>",
-        "<p>Submitted!</p><p style=\"font-size:20px;\">Check your email for a copy</p>",
-        "<p>Failed to Submit 😞</p>"
-    ]
+    }
 }
 
