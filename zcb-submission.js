@@ -7,18 +7,14 @@ const inlineCss = require('inline-css');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const mysql = require('mysql');
 const mysql_credentials = require('./mysql_credentials.json');
-const mysql_lib = require('mysql');
-const mysql = mysql_lib.createConnection({
+const mysql_connection_info = {
   host: mysql_credentials.host,
   user: mysql_credentials.user,
   password: mysql_credentials.password,
   database: mysql_credentials.database
-});
-mysql.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected to "+mysql_credentials.database+" database.");
-});
+};
 
 const nodemailer = require('nodemailer');
 const gmailCredentials = require('./gmail_credentials.json');
@@ -127,10 +123,14 @@ function createPDF(html, filename, done){
 }
 
 function insertIntoDatabase(details, filename, type){
-  let query = "insert into submission (name, email, phone, filename, type) \
-    values ('"+details.name+"', '"+details.email+"', '"+details.phone+"', '"+filename+"', '"+type+"');";
-  mysql.query(query, function (err, result) {
-    if(err) console.log("Error adding database rows");
+  let connection = mysql.createConnection(mysql_connection_info);
+  connection.query({
+    sql: 'INSERT INTO submission (name, email, phone, filename, type) values (?)',
+    values: [[details.name, details.email, details.phone, filename, type]],
+    timeout: 40000
+  }, function (error, results, fields) {
+    if(error) console.log("Error adding database rows: "+error);
     else console.log("Added submission to database.");
+    connection.end();
   });
 }
