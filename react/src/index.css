@@ -535,3 +535,18 @@ hr {
 u {
     text-decoration: inherit;
 }
+
+.submit-finished a img.hover-enlarge {
+  width:100px!important;
+  height:100px!important;
+  margin:10px!important;
+  -moz-transition: width .25s, height .25s, margin .25s;
+  -webkit-transition: width .25s, height .25s, margin .25s;
+  transition: width .25s, height .25s, margin .25s;
+}
+
+.submit-finished a:hover img.hover-enlarge {
+  width:120px!important;
+  height:120px!important;
+  margin:0!important;
+}

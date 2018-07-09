@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
 import ContentEditable from 'react-contenteditable';
 import logo from './logo.svg';
+import submit_messages from './submit_messages.json';
 
 class Form extends Component {
   constructor(props) {
@@ -99,7 +100,7 @@ class Form extends Component {
       },
       body: JSON.stringify(elementData)
     }).then((response) => {
-      if (response.ok) this.finished = 2;
+      if (!response.ok) this.finished = 2;
       else this.finished = 3;
       this.forceUpdate();
     });
@@ -126,7 +127,7 @@ class Form extends Component {
     let elems = [];
     let footerElems = [];
     if(this.finished > 0){
-      elems = <section className="finished" dangerouslySetInnerHTML={{ __html: this.props.data.finished[this.finished-1] }}></section>
+      elems = <section className="finished" dangerouslySetInnerHTML={{ __html: submit_messages[this.finished-1] }}></section>
     } else {
       for(let i=0; i<questions.length; i++){
         if(questions[i].type === "multi")
