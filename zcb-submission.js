@@ -44,12 +44,6 @@ const options = {
 const stylesheet = fs.readFileSync('pdf_formatting.css', 'utf8');
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-app.use(function(req, res, next) { 
-  res.header("Access-Control-Allow-Origin", "*"); 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
-  next(); 
-});
-
 app.post('/', (req, res) => {
   let title = req.body.details.name+"'s Zero Carbon Bill Submission";
   let html = createHTML(req.body);
