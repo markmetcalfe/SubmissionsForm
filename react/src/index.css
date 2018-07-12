@@ -550,3 +550,194 @@ u {
   height:120px!important;
   margin:0!important;
 }
+
+a.info-button {
+  width: 7vh;
+  display: block;
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+}
+
+a.info-button svg {
+  -webkit-transition: -webkit-transform 0.15s;
+  -moz-transition: -moz-transform 0.15s;
+  transition: transform 0.15s;
+}
+
+a.info-button:hover svg {
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+a.info-button svg path {
+  fill: #333;
+  -webkit-transition: fill 0.15s;
+  -moz-transition: fill 0.15s;
+  transition: fill 0.15s;
+}
+
+a.info-button:hover svg path {
+  fill: #4180aa;
+}
+
+header.tab {
+  margin: 5vmin auto 0 auto;
+  max-width: 700px;
+  height: 40px;
+}
+
+main.tab {
+  padding: 5vmin;
+  margin: 0 auto 30px auto;
+  max-width: 700px;
+  background-color: #fff;
+  border-bottom: #4180aa 5px solid;
+}
+
+main.tab p {
+  margin: 10px 0;
+}
+
+main.tab li, main.tab ul {
+  margin: 10px 0;
+}
+
+main.tab .indented {
+  margin-left: 20px;
+}
+
+main.tab h1 {
+  margin-bottom: 20px;
+}
+
+main.tab .social-icons h1 {
+  margin: 10px 0 5px;
+}
+
+main.tab .submit-now {
+  margin: 40px 0;
+  text-align: center;
+}
+
+main.tab .submit-now a {
+  font-size: 2em;
+  color: #fff;
+  background-color: #4180aa;
+  padding: 15px;
+  padding: 15px 25px;
+  text-decoration: none;
+  border: 3px solid transparent;
+  -moz-transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+main.tab .submit-now a:hover {
+  background-color: #fff;
+  color: #4180aa;
+  border: 3px solid #4180aa;
+}
+
+.react-tabs__tab-list {
+  font-weight: bold;
+  font-size: 1.15em;
+  color: #4180aa;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
+
+@media(max-width: 700px) {
+  .react-tabs__tab-list {
+    font-size: 2.75vw;
+  }
+}
+
+.react-tabs__tab {
+  width: 50%;    
+  height: 40px;
+  line-height: 25px;
+  padding: 0.5em 1em;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color 250ms;
+}
+
+.react-tabs__tab + .tab-slide {
+  width: 50%;
+  height: 37px;
+  background: #fff;    
+  position: relative;
+  transform: translateY(-40px);
+  z-index: -1;
+  border-bottom: #4180aa 5px solid;
+  transition: margin-left 250ms;
+}
+
+.react-tabs__tab:not(.react-tabs__tab--selected) + .tab-slide {
+  margin-left: 0;
+}
+
+.react-tabs__tab.react-tabs__tab--selected + .tab-slide {
+  margin-left: 50%;
+}
+
+.react-tabs__tab--selected {
+  cursor: default;
+}
+
+.react-tabs__tab:not(.react-tabs__tab--selected){
+  cursor: pointer;
+  color: #333;
+}
+
+.social-icons {
+  text-align: center;
+}
+
+.social-icons a {
+  max-width: 33.33%;
+  display: inline-block;
+}
+
+.social-icons a img {
+  width: 100%;
+  padding: 1vmin;
+  margin: 0;
+}
+
+.social-icons a img.hover-enlarge {
+  max-width:100px!important;
+  max-height:100px!important;
+  margin:10px;
+  -moz-transition: max-width .25s, max-height .25s, margin .25s;
+  -webkit-transition: max-width .25s, max-height .25s, margin .25s;
+  transition: max-width .25s, max-height .25s, margin .25s;
+}
+
+.social-icons a:hover img.hover-enlarge {
+  max-width:120px!important;
+  max-height:120px!important;
+  margin:0;
+}
+
+.react-tabs__tab-panel {
+  transition: max-height 1s;    
+  overflow-y: hidden;
+}
+
+.react-tabs__tab-panel:not(.react-tabs__tab-panel--selected) {
+  max-height: 0;
+}
+
+.react-tabs__tab-panel.react-tabs__tab-panel--selected {
+  max-height: 1000px;
+}
