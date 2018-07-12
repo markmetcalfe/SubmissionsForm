@@ -2,6 +2,7 @@
 
 tmp/
 pdfs/
+files/
 gmail_credentials.json
 mysql_credentials.json
 

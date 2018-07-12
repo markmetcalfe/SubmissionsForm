@@ -31,12 +31,12 @@ class LeftTab extends Component {
       <h1>Zero Carbon Bill submission guide</h1>
       <p><b>Resources to help you:</b></p>
       <Indented>
-        <p>To help you write your own submission, <a href="https://d3n8a8pro7vhmx.cloudfront.net/orataiao/mailings/205/attachments/original/Zero_Carbon_Act_submission_guide_for_HNGO_partnerships_FINAL_23.41_4_July_2018.pdf">click here</a> for a fully referenced health submission guide.</p>
-        <p>For more detail about why to set strong targets, and how climate action can improve health, click <a href="https://d3n8a8pro7vhmx.cloudfront.net/orataiao/pages/492/attachments/original/1531192915/Setting_ambitious_greenhouse_gas_emissions_targets_for_New_Zealand_–_the_case_for_international_fairness_equity.pdf">here</a> and <a href="https://d3n8a8pro7vhmx.cloudfront.net/orataiao/pages/492/attachments/original/1531192913/Health_benefits_and_savings_of_equitable_climate_mitigation_in_New_Zealand.pdf">here</a>.</p>
-        <p><a href="https://d3n8a8pro7vhmx.cloudfront.net/orataiao/pages/492/attachments/original/1531192915/Setting_ambitious_greenhouse_gas_emissions_targets_for_New_Zealand_–_the_case_for_international_fairness_equity.pdf">Setting ambitious targets – NZ being fair</a> as a global citizen</p>
-        <p><a href="https://d3n8a8pro7vhmx.cloudfront.net/orataiao/pages/492/attachments/original/1531192913/Health_benefits_and_savings_of_equitable_climate_mitigation_in_New_Zealand.pdf?1531192913">Win-wins in health</a></p>
-        <p>For information on climate change and health in New Zealand, <a href="http://www.nzma.org.nz/journal/read-the-journal/all-issues/2010-2019/2014/vol-127-no-1406/6366">click here</a>.</p>
-        <p>For the Ministry for the Environment’s discussion document, click <a href="https://www.mfe.govt.nz/sites/default/files/media/Consultations/FINAL-%20Zero%20Carbon%20Bill%20-%20Discussion%20Document.pdf">here</a></p>
+        <p>To help you write your own submission, <a href="/files/Zero_Carbon_Act_submission_guide_for_HNGO_partnerships_FINAL_23.41_4_July_2018.pdf" target="_blank" rel="noopener noreferer">click here</a> for a fully referenced health submission guide.</p>
+        <p>For more detail about why to set strong targets, and how climate action can improve health, click <a href="/files/Setting_ambitious_greenhouse_gas_emissions_targets_for_New_Zealand_–_the_case_for_international_fairness_equity.pdf" target="_blank" rel="noopener noreferer">here</a> and <a href="/files/Health_benefits_and_savings_of_equitable_climate_mitigation_in_New_Zealand.pdf" target="_blank" rel="noopener noreferer">here</a>.</p>
+        <p><a href="/files/Setting_ambitious_greenhouse_gas_emissions_targets_for_New_Zealand_–_the_case_for_international_fairness_equity.pdf" target="_blank" rel="noopener noreferer">Setting ambitious targets – NZ being fair</a> as a global citizen</p>
+        <p><a href="/files/Health_benefits_and_savings_of_equitable_climate_mitigation_in_New_Zealand.pdf" target="_blank" rel="noopener noreferer">Win-wins in health</a></p>
+        <p>For information on climate change and health in New Zealand, <a href="http://www.nzma.org.nz/journal/read-the-journal/all-issues/2010-2019/2014/vol-127-no-1406/6366" target="_blank" rel="noopener noreferer">click here</a>.</p>
+        <p>For the Ministry for the Environment’s discussion document, click <a href="https://www.mfe.govt.nz/sites/default/files/media/Consultations/FINAL-%20Zero%20Carbon%20Bill%20-%20Discussion%20Document.pdf" target="_blank" rel="noopener noreferer">here</a></p>
       </Indented>
       <p><b>Now it’s your turn!</b></p>
       <Indented>
