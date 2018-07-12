@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ReactSVG from 'react-svg';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './index.css';
 import quickForm from './quick.json';
 import fullForm from './full.json';
 import Form from './Form';
+import Info from './Info';
+import questionCircle from './question-circle.svg';
 
 class Quick extends Component {
   render() {
@@ -21,11 +24,24 @@ class Full extends Component {
 class Homepage extends Component {
   render() {
     return(
+      <div>
       <main className="container homepage">
         <h1 className="pagetitle">Zero Carbon Bill Submission</h1>
         <Link link="/quick" text="Make a quick 5 minute submission" />
         <Link link="/full" text="Make a full submission" last={true} />
       </main>
+      <InfoButton link="/info" />
+      </div>
+    )
+  }
+}
+
+class InfoButton extends Component {
+  render(){
+    return(
+      <a href={this.props.link} className="info-button">
+        <ReactSVG path={questionCircle} />
+      </a>
     )
   }
 }
@@ -53,6 +69,7 @@ ReactDOM.render(
       <Route exact={true} path="/" component={Homepage}/>
       <Route path="/quick" component={Quick}/>
       <Route path="/full" component={Full}/>
+      <Route path="/info" component={Info}/>
     </div>
   </Router>
 , document.getElementById('root'))
