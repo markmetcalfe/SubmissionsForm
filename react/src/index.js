@@ -27,8 +27,7 @@ class Homepage extends Component {
       <div>
       <main className="container homepage">
         <h1 className="pagetitle">Zero Carbon Bill Submission</h1>
-        <Link link="/quick" text="Make a quick 5 minute submission" />
-        <Link link="/full" text="Make a full submission" last={true} />
+        <div className="closed-message">Sorry, submissions have now closed.</div>
       </main>
       <InfoButton link="/info" />
       </div>
@@ -66,10 +65,10 @@ class Link extends Component {
 ReactDOM.render(
   <Router>
     <div>
-      <Route exact={true} path="/" component={Homepage}/>
-      <Route path="/quick" component={Quick}/>
-      <Route path="/full" component={Full}/>
       <Route path="/info" component={Info}/>
+      <Route path="/quick" component={Homepage}/>
+      <Route path="/full" component={Homepage}/>
+      <Route exact={true} path="/" component={Homepage}/>
     </div>
   </Router>
 , document.getElementById('root'))
