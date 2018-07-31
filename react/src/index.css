@@ -241,7 +241,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   transition: background-color border-color ease-in-out .25s, box-shadow ease-in-out .25s;
 }
 
-input[type="submit"], input[type="button"] {
+input[type="submit"], input[type="button"], button {
   color: #333;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -264,7 +264,7 @@ input[type="submit"], input[type="button"] {
   transition: background-color ease-in-out .15s, border-color ease-in-out .15s;
 }
 
-input[type="submit"]:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):active, input[type="button"]:not([disabled]):active, input[type="submit"]:not([disabled]):hover, input[type="button"]:not([disabled]):hover {
+input[type="submit"]:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):active, input[type="button"]:not([disabled]):active, input[type="submit"]:not([disabled]):hover, input[type="button"]:not([disabled]):hover, button:hover {
   -moz-box-shadow: 0 0 0 transparent;
   -webkit-box-shadow: 0 0 0 transparent;
   box-shadow: 0 0 0 transparent;
@@ -740,4 +740,43 @@ main.tab .submit-now a:hover {
 
 .react-tabs__tab-panel.react-tabs__tab-panel--selected {
   max-height: 1000px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -150%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.mm-popup.mm-popup--visible {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  text-align: center;
+  width: max-content;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: 2px #4180aa solid;
+  padding: 15px 20px;
+  animation: fadeInDown 1s;
+}
+
+.mm-popup__box__body h3 {
+  margin-bottom: 5px;
+}
+
+.mm-popup__btn.mm-popup__btn--ok {
+  margin-top:5px;
+}
+
+.mm-popup__close {
+  display:none;
 }

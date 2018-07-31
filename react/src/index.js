@@ -8,6 +8,7 @@ import fullForm from './full.json';
 import Form from './Form';
 import Info from './Info';
 import questionCircle from './question-circle.svg';
+import Popup from 'react-popup';
 
 class Quick extends Component {
   render() {
@@ -64,6 +65,8 @@ class Link extends Component {
 }
 
 ReactDOM.render(
+  <div>
+  <Popup />
   <Router>
     <div>
       <Route exact={true} path="/" component={Homepage}/>
@@ -72,4 +75,7 @@ ReactDOM.render(
       <Route path="/info" component={Info}/>
     </div>
   </Router>
+  </div>
 , document.getElementById('root'))
+
+Popup.alert(<div><h3>SUBMISSIONS CLOSED</h3><p>Please note that submissions closed on the 19th of July.</p><p>If you send a submission using this form, it will NOT be sent to MfE!</p><p>This is for demo purposes only.</p></div>);
